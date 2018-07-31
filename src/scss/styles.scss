@@ -1,0 +1,84 @@
+// Core variables and mixins
+// Variable Overrides
+$theme-colors: (
+  //"primary": #f2de66,
+  //"secondary": #333e48
+);
+//$body-bg: #eeeeee;
+//$font-family-sans-serif: 'Open Sans', sans-serif;
+//$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+//
+//$h1-font-size: $font-size-base * 2.25;
+//$h2-font-size: $font-size-base * 2;
+$background-bg: rgb(51, 103, 214);
+
+// Bootstrap Sass Imports
+//@import "node_modules/bootstrap/scss/bootstrap"; // Core variables and mixins
+@import "mixins"; // Custom mixins;
+@import url(font-electro.css);
+//@import "navbar-search"; // Custom mixins
+@import "site-header-cart"; // Custom mixins
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-left: 4.6875% !important;
+    padding-right: 4.6875% !important;
+  }
+
+}
+
+.header-container {
+  background: $background-bg;
+  .top-bar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.857em;
+    a,
+    .welcome-msg {
+      color: #fff;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      //display: block;
+    }
+  }
+  .header-middle {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    .navbar {
+      padding: inherit;
+    }
+    .navbar-dark {
+      .navbar-toggler {
+        border-color: transparent;
+        &:focus {
+          border-color: transparent;
+          outline: none;
+        }
+      }
+      .navbar-nav .nav-link{
+
+      }
+    }
+    .navbar-nav .dropdown-menu {
+      position: absolute;
+    }
+    .header-middle-menu {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
