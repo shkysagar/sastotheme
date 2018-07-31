@@ -50,7 +50,7 @@ $MagikCreta = new MagikCreta(); ?>
                             <input type="text" class="form-control" aria-label="Text input with checkbox">
                         </div>
 
-                        <select class="custom-select" id="inputGroupSelect03"
+                        <select class="form-control" id="inputGroupSelect03"
                                 aria-label="Example select with button addon">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
@@ -62,32 +62,6 @@ $MagikCreta = new MagikCreta(); ?>
                         </div>
                     </div>
 
-                    <form role="search" method="get" class="navbar-search-form d-none"
-                          action="http://sastotheme.domain/">
-                        <div class="cate-search-outer">
-                            <select class="cate-search" name="product_cat">
-                                <option value="">All categories</option>
-                                <option value="uncategorized">Uncategorized</option>
-                                <option value="men">Anniversary</option>
-                                <option value="furniture">Birthday</option>
-                                <option value="flower-box-basket">Flower Box/ Basket</option>
-                                <option value="music">Mixed Flowers</option>
-                                <option value="women">Occasion</option>
-                                <option value="rose-bouquet">Rose Bouquet</option>
-                                <option value="valentine-day">Valentine Day</option>
-                                <option value="wedding">Wedding</option>
-                            </select>
-                        </div>
-                        <div class="results-search">
-                            <input type="hidden" name="post_type" value="product">
-                            <input type="hidden" name="wrls_search_in" value="title">
-                            <input required="" data-max-results="5" data-thumb-size="50" data-min-characters="3"
-                                   data-search-in="{&quot;title&quot;:1,&quot;description&quot;:&quot;0&quot;,&quot;content&quot;:&quot;0&quot;,&quot;sku&quot;:&quot;0&quot;}"
-                                   data-show-suggestion="1" value="" placeholder="Search product..."
-                                   class="txt-livesearch suggestion-search" type="search" name="s" autocomplete="off">
-                        </div>
-                        <input class="btn-livesearch " type="submit" value="Search">
-                    </form>
                 </div>
                 <?php
                 if (class_exists('WooCommerce')) :
@@ -101,20 +75,6 @@ $MagikCreta = new MagikCreta(); ?>
         <div class="header-middle-menu collapse show" id="navbarHeader" style="">
             <div class="container-fluid">
                 <?php echo magikCreta_main_menu(); ?>
-                <ul class="nav d-none">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>

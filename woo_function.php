@@ -450,7 +450,7 @@ function magikCreta_woocommerce_header_add_to_cart_fragment($fragments)
                             <?php echo htmlspecialchars_decode(WC()->cart->get_cart_subtotal()); ?>
                     </span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right mini-cart-block show" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu dropdown-menu-right mini-cart-block" aria-labelledby="navbarDropdownMenuLink">
 
                         <?php if (sizeof(WC()->cart->get_cart()) > 0) : $i = 0; ?>
                             <div class="mini-cart-list">

@@ -10,42 +10,49 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see       https://docs.woocommerce.com/document/template-structure/
+ * @author    WooThemes
+ * @package   WooCommerce/Templates
  * @version     3.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
-global $woocommerce_loop;
-$devita_opt = get_option( 'devita_opt' );
-$woocommerce_loop['columns'] = 1;
+global $product, $woocommerce_loop,$creta_Options;
+
 
 if ( $cross_sells ) : ?>
 
-	<div class="cross-sells">
+<?php if (isset($creta_Options['enable_cross_sells_products']) && !empty($creta_Options['enable_cross_sells_products'])) { 
+  ?>
 
-		<div class="title1"><h3 class="widget-title"><?php echo esc_html($devita_opt['crosssells_title']); ?></h3></div>
+  <div class="crosssel bounceInUp animated">
+     <div class="new_title">
+       <h2><?php _e( 'You may be interested', 'woocommerce' ) ?></h2>
+     </div>
+    <div class="category-products">
+    <?php woocommerce_product_loop_start(); ?>
 
-		<?php woocommerce_product_loop_start(); ?>
+      <?php foreach ( $cross_sells as $cross_sell ) : ?>
+       
+        <?php
 
-			<?php foreach ( $cross_sells as $cross_sell ) : ?>
+          $post_object = get_post( $cross_sell->get_id() );
 
-				<?php
-				 	$post_object = get_post( $cross_sell->get_id() );
+          setup_postdata( $GLOBALS['post'] =& $post_object );
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+          wc_get_template_part( 'content', 'product' ); ?>
 
-					wc_get_template_part( 'content', 'product' ); ?>
+      <?php endforeach; ?>
 
-			<?php endforeach; ?>
+    <?php woocommerce_product_loop_end(); ?>
+    
+    </div>
+  </div>
 
-		<?php woocommerce_product_loop_end(); ?>
-
-	</div>
+<?php } ?>
 
 <?php endif;
 

@@ -15,67 +15,47 @@
  * @package WooCommerce/Templates
  * @version 2.6.1
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
-global $woocommerce_loop;
 
-$devita_opt = get_option( 'devita_opt' );
-
-$colwidth = 3;
-$devita_shopclass="";
-
-if($devita_shopclass=='shop-fullwidth') {
-	if(isset($devita_opt)){
-		$woocommerce_loop['columns'] = $devita_opt['product_per_row_fw'];
-		if($woocommerce_loop['columns'] > 0){
-			$colwidth = round(12/$woocommerce_loop['columns']);
-		}
-	}
-	$col_classes = ' col-12 col-sm-6 col-md-4 col-lg-'.$colwidth ;
-} else {
-	if(isset($devita_opt)){
-		$woocommerce_loop['columns'] = $devita_opt['product_per_row'];
-		if($woocommerce_loop['columns'] > 0){
-			$colwidth = round(12/$woocommerce_loop['columns']);
-		}
-	}
-	$col_classes = ' col-12 col-md-4 col-lg-'.$colwidth ;
-}
 ?>
-<div <?php wc_product_cat_class($col_classes); ?>>
-	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
-	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
+<li <?php wc_product_cat_class( 'col-lg-4 col-md-4 col-sm-4 col-xs-6', $category ); ?> >
 
-		<?php
-			/**
-			 * woocommerce_before_subcategory_title hook
-			 *
-			 * @hooked woocommerce_subcategory_thumbnail - 10
-			 */
-			do_action( 'woocommerce_before_subcategory_title', $category );
-		?>
+    <?php do_action('woocommerce_before_subcategory', $category); ?>
 
-		<span>
-			<?php
-				echo ''.$category->name;
+    <a href="<?php echo esc_url(get_term_link($category->slug, 'product_cat')); ?>">
 
-				if ( $category->count > 0 )
-					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
-			?>
-		</span>
+        <?php
+        /**
+         * woocommerce_before_subcategory_title hook
+         *
+         * @hooked woocommerce_subcategory_thumbnail - 10
+         */
+        do_action('woocommerce_before_subcategory_title', $category);
+        ?>
 
-		<?php
-			/**
-			 * woocommerce_after_subcategory_title hook
-			 */
-			do_action( 'woocommerce_after_subcategory_title', $category );
-		?>
+        <h3>
+            <?php
+            echo esc_attr($category->name);
 
-	</a>
+            if ($category->count > 0)
+                echo apply_filters('woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category);
+            ?>
+        </h3>
 
-	<?php do_action( 'woocommerce_after_subcategory', $category ); ?>
-</div>
+        <?php
+        /**
+         * woocommerce_after_subcategory_title hook
+         */
+        do_action('woocommerce_after_subcategory_title', $category);
+        ?>
+
+    </a>
+
+    <?php do_action('woocommerce_after_subcategory', $category); ?>
+
+</li>
+
