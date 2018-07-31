@@ -119,85 +119,9 @@ $MagikCreta = new MagikCreta(); ?>
         </div>
     </div>
 
-    <div class="header-middle">
-        <div class="container-fluid">
 
-        </div>
-    </div>
 </div>
 
-<hr/>
-
-<!-- Header -->
-<header id="header">
-    <div class="header-container">
-        <div class="header-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-
-                        <?php //echo magikCreta_currency_language(); ?>
-
-                        <div class="welcome-msg">
-                            <?php echo magikCreta_msg(); ?>
-                        </div>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <?php echo magikCreta_top_navigation(); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 hidden-xs">
-
-                    <?php echo magikCreta_search_form(); ?>
-
-                </div>
-
-                <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 logo-block">
-                    <!-- Header Logo -->
-                    <div class="logo">
-                        <?php magikCreta_logo_image(); ?>
-                    </div>
-
-                    <!-- End Header Logo -->
-
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <div class="top-cart-contain pull-right">
-                        <?php
-//                        if (class_exists('WooCommerce')) :
-//                            $MagikCreta->magikCreta_mini_cart();
-//                        endif;
-                        ?>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</header>
-<nav>
-    <div class="container">
-        <div class="mm-toggle-wrap">
-            <div class="mm-toggle"><a class="mobile-toggle"><i class="fa fa-reorder"></i></a></div>
-
-        </div>
-        <div id="main-menu-new">
-            <div class="nav-inner">
-
-                <?php echo magikCreta_main_menu(); ?>
-            </div>
-
-        </div>
-    </div>
-</nav>
-<!-- end header -->
 <?php if (class_exists('WooCommerce') && is_woocommerce()) : ?>
 
 <div class="breadcrumbs">
