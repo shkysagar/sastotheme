@@ -100,7 +100,8 @@ $MagikCreta = new MagikCreta(); ?>
         </div>
         <div class="header-middle-menu collapse show" id="navbarHeader" style="">
             <div class="container-fluid">
-                <ul class="nav">
+                <?php echo magikCreta_main_menu(); ?>
+                <ul class="nav d-none">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Active</a>
                     </li>

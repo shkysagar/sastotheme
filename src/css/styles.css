@@ -44,3 +44,7 @@ h1, h2, h3, h4, h5, h6 {
       position: absolute; }
     .header-container .header-middle .header-middle-menu {
       background: rgba(0, 0, 0, 0.1); }
+      .header-container .header-middle .header-middle-menu .menu-main_menu .menu-item-has-children:hover .dropdown-menu {
+        display: block !important;
+        top: inherit;
+        left: inherit; }

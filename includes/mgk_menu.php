@@ -535,17 +535,17 @@ if (!class_exists('MagikCreta_top_navwalker')) {
             $indent = str_repeat("\t", $depth);
 
             if ( $depth == 0 ) {
-                $out_div = '<div class="mgk-popup"><div class="inner" style="'.$args->popup_style.'">';
+                $out_div = '';
             } else {
                 $out_div = '';
             }
-            $output .= "\n$indent$out_div<ul class=\"sub-menu\">\n";
+            $output .= "\n$indent$out_div<ul class=\"dropdown-menu\">\n";
         }
 
         function end_lvl( &$output, $depth = 0, $args = array() ) {
             $indent = str_repeat("\t", $depth);
             if ( $depth == 0 ) {
-                $out_div = '</div></div>';
+                $out_div = '';
             } else {
                 $out_div = '';
             }
@@ -688,7 +688,7 @@ if (!class_exists('MagikCreta_mobile_navwalker')) {
         // add main/sub classes to li's and links
         function start_lvl( &$output, $depth = 0, $args = array() ) {
             $indent = str_repeat("\t", $depth);
-            $output .= "\n$indent<span class=\"arrow\"></span><ul class=\"sub-menu\">\n";
+            $output .= "\n$indent<span class=\"arrow\"></span><ul class=\"dropdown-menu\">\n";
         }
 
         function end_lvl( &$output, $depth = 0, $args = array() ) {
