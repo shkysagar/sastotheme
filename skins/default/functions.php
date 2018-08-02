@@ -508,7 +508,7 @@ if (!function_exists('magikCreta_recommended_products')) {
                                 </div>
 
 
-                                <div class="slider-items slider-width-col4 products-grid block-content">
+                                <div class="slider-items slider-width-col4 products-grid block-content row">
                                     <?php
                                     $args = array(
                                         'post_type' => 'product',
@@ -578,7 +578,7 @@ if (!function_exists('magikCreta_featured_products')) {
                                        href="<?php echo !empty($creta_Options['enable_home_featured_products']) ? esc_url($creta_Options['featured_product_url']) : '#' ?>"><?php esc_attr_e('VIEW ALL ', 'creta'); ?></a>
                                 </div>
 
-                                <div class="slider-items slider-width-col4 products-grid block-content owl-carousel owl-theme">
+                                <div class="slider-items slider-width-col4 products-grid row block-content owl-carousel owl-theme">
 
 
                                     <?php
@@ -654,7 +654,7 @@ if (!function_exists('magikCreta_bestseller_products')) {
                                 </div>
 
 
-                                <div class="slider-items slider-width-col4 products-grid block-content">
+                                <div class="slider-items slider-width-col4 products-grid block-content row">
 
                                     <!-- best seller category fashion -->
 
@@ -759,7 +759,7 @@ if (!function_exists('magikCreta_new_products')) {
                                             <div class="tab-panel <?php if ($contentloop == 1) { ?> active <?php } ?>"
                                                  id="newcat-<?php echo esc_html($catcontent); ?>">
                                                 <div class="category-products">
-                                                    <ul class="products-grid">
+                                                    <ul class="products-grid row">
                                                         <?php
 
                                                         $args = array(
@@ -885,7 +885,7 @@ if (!function_exists('magikCreta_newproduct_template')) {
             $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
 
         ?>
-        <li class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+        <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
             <div class="item-inner">
                 <div class="item-img">
                     <div class="item-img-info">
@@ -972,7 +972,7 @@ if (!function_exists('magikCreta_newproduct_template')) {
                     </div>
                 </div>
             </div>
-        </li>
+        </div>
         <?php
 
     }
@@ -990,7 +990,7 @@ if (!function_exists('magikCreta_productitem_template')) {
 
         ?>
 
-        <div class="item">
+        <div class="col-md-4">
             <div class="item-inner">
                 <div class="item-img">
                     <div class="item-img-info">
