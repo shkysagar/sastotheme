@@ -21,30 +21,29 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 4.6875% !important;
     padding-right: 4.6875% !important; } }
 
-.header-container {
-  background: #3367d6; }
-  .header-container .top-bar {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.857em; }
-    .header-container .top-bar a,
-    .header-container .top-bar .welcome-msg {
-      color: #fff;
-      padding-top: 7px;
-      padding-bottom: 7px; }
-  .header-container .header-middle {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-    .header-container .header-middle .navbar {
-      padding: inherit; }
-    .header-container .header-middle .navbar-dark .navbar-toggler {
-      border-color: transparent; }
-      .header-container .header-middle .navbar-dark .navbar-toggler:focus {
-        border-color: transparent;
-        outline: none; }
-    .header-container .header-middle .navbar-nav .dropdown-menu {
-      position: absolute; }
-    .header-container .header-middle .header-middle-menu {
-      background: rgba(0, 0, 0, 0.1); }
-      .header-container .header-middle .header-middle-menu .menu-main_menu .menu-item-has-children:hover .dropdown-menu {
-        display: block !important;
-        top: inherit;
-        left: inherit; }
+.header-container .top-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.857em; }
+  .header-container .top-bar a,
+  .header-container .top-bar .welcome-msg {
+    color: #fff;
+    padding-top: 7px;
+    padding-bottom: 7px; }
+
+.header-container .header-middle {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .header-container .header-middle .navbar {
+    padding: inherit; }
+  .header-container .header-middle .navbar-dark .navbar-toggler {
+    border-color: transparent; }
+    .header-container .header-middle .navbar-dark .navbar-toggler:focus {
+      border-color: transparent;
+      outline: none; }
+  .header-container .header-middle .navbar-nav .dropdown-menu {
+    position: absolute; }
+  .header-container .header-middle .header-middle-menu {
+    background: rgba(0, 0, 0, 0.1); }
+    .header-container .header-middle .header-middle-menu .menu-main_menu .menu-item-has-children:hover .dropdown-menu {
+      display: block !important;
+      top: inherit;
+      left: inherit; }
