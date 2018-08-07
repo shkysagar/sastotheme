@@ -1,4 +1,5 @@
 <?php magikCreta_home_page_banner(); ?>
+<?php magikCreta_hotdeal_product(); ?>
 
 <?php
 $args = array(

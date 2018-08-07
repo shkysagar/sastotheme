@@ -13,7 +13,7 @@ $theme-colors: (
 $background-bg: rgb(51, 103, 214);
 
 // Bootstrap Sass Imports
-//@import "node_modules/bootstrap/scss/bootstrap"; // Core variables and mixins
+@import "node_modules/bootstrap/scss/bootstrap"; // Core variables and mixins
 @import "mixins"; // Custom mixins;
 @import url(font-electro.css);
 //@import "navbar-search"; // Custom mixins
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-container {
-  //background: $background-bg;
+  background: $background-bg;
   .top-bar {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.857em;
@@ -96,3 +96,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.hero-section{
+  background-size: cover;
+  height: 350px;
+  position: relative;
+  .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($black, 0.5);
+
+  }
+  .hero-search{
+    //background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
