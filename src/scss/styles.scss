@@ -1,0 +1,18 @@
+// Core variables and mixins
+// Variable Overrides
+$theme-colors: (
+        "primary": #03a9f4,
+        "secondary": #333e48
+);
+$body-bg: #f1f5f8;
+$body-color: #707070;
+$link-color: $body-color;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$h1-font-size: $font-size-base * 2.25;
+//$h2-font-size: $font-size-base * 2;
+
+$primary-color: #03a9f4;
+// Bootstrap Sass Imports
+@import "node_modules/bootstrap/scss/bootstrap";

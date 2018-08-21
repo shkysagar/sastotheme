@@ -604,11 +604,11 @@ function magikCreta_hotdeal_timer_js()
 
 
 <script type="text/javascript">
-jQuery('.timer-grid').each(function(){
-    var countTime=jQuery(this).attr('data-time');
-    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> mins</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>sec</div>')});
-    
-});
+//jQuery('.timer-grid').each(function(){
+//    var countTime=jQuery(this).attr('data-time');
+//    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> mins</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>sec</div>')});
+//
+//});
 </script>
 <?php
 }
