@@ -17,8 +17,8 @@ $MagikCreta = new MagikCreta(); ?>
             <div>
                 <?php magikCreta_logo_image(); ?>
             </div>
-            <div class="ml-auto">
-                <div class="top-header">
+            <div class="ml-auto ">
+                <div class="top-header pb-1">
                     <?php echo magikCreta_top_navigation(); ?>
                 </div>
                 <div class="search-header">

@@ -1255,6 +1255,13 @@ class MagikCreta
     }
 }
 
+add_action('wp_enqueue_scripts', 'tifd_remove_default_stylesheet', 999);
+function tifd_remove_default_stylesheet()
+{
+    wp_dequeue_style('enqueue_assets');
+
+}
+
 // Instantiate theme
 $MagikCreta = new MagikCreta();
 

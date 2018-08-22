@@ -6662,3 +6662,5 @@ header {
   font-size: 14px;
   padding-top: 0;
   padding-bottom: 0; }
+  .top-header a.nav-link:last-child {
+    padding-right: 0; }

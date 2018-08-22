@@ -8,7 +8,7 @@ if (!function_exists('magikCreta_top_navigation')) {
             wp_nav_menu(array(
                 'theme_location' => 'toplinks',
                 'container' => '',
-                'menu_class' => 'nav' . $mcls,
+                'menu_class' => 'nav justify-content-end' . $mcls,
                 'before' => '',
                 'after' => '',
                 'link_before' => '',
