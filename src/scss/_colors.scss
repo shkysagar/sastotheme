@@ -1,0 +1,16 @@
+$color: (
+        body-bg: #e4f5ef,
+
+        dark-primary: #42b983,
+        light-primary: #e4f5ef,
+        dark-secondary: #2c3e50,
+        light-secondary: #6a8bad,
+
+        border-colors: #e5e5e5,
+);
+
+@function color($color-name) {
+  @return map-get($color, $color-name)
+}
+
+// usages background-color: color(primary);

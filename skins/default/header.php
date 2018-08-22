@@ -11,7 +11,23 @@
 $MagikCreta = new MagikCreta(); ?>
 <body <?php body_class(); ?> >
 
-
+<header>
+    <div class="container-fluid">
+        <div class="d-flex">
+            <div>
+                <?php magikCreta_logo_image(); ?>
+            </div>
+            <div class="ml-auto">
+                <div class="top-header">
+                    <?php echo magikCreta_top_navigation(); ?>
+                </div>
+                <div class="search-header">
+                    <?php echo do_shortcode('[wr_live_search show_button="yes" show_category="yes" search_in="title, description, content, sku" show_suggestion="yes"]'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <hr/>
 <div id="page" class="page catalog-category-view">

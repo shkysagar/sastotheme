@@ -1,11 +1,17 @@
 // Core variables and mixins
+@import 'mixin';
+@import 'colors';
+@import 'vars';
 // Variable Overrides
 $theme-colors: (
-        "primary": #03a9f4,
-        "secondary": #333e48
+        "primary": color(dark-primary),
+        "secondary": color(light-primary),
+        "primary2": color(dark-secondary),
+        "secondary2": color(light-secondary),
+        "border-colors": color(border-colors),
 );
-$body-bg: #f1f5f8;
-$body-color: #707070;
+$body-bg: #fff;
+$body-color: color(dark-secondary);
 $link-color: $body-color;
 $font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
@@ -13,6 +19,40 @@ $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $h1-font-size: $font-size-base * 2.25;
 //$h2-font-size: $font-size-base * 2;
 
-$primary-color: #03a9f4;
+//$primary-color: red;
 // Bootstrap Sass Imports
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap"; // Core variables and mixins
+
+@import 'form';
+@import 'button';
+@import 'table';
+//@import 'linearicons.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+body {
+  position: relative;
+}
+
+a {
+  &:not(.btn) {
+    text-decoration: none;
+  }
+}
+
+.container-fluid {
+  @media(min-width: 1200px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+header {
+  padding: 10px 0px;
+}
+
+.top-header {
+  a.nav-link {
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
