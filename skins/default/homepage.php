@@ -44,11 +44,14 @@
         </div>
     </section>
 
-    <?php magikCreta_new_products();?>
+    <?php magikCreta_recent_products();?>
 
     <?php magikCreta_featured_products(); ?>
 
 </main>
+
+
+
 <?php //magikCreta_home_page_banner(); ?>
 <?php //magikCreta_new_products();?>
 <?php //magikCreta_bestseller_products(); ?>

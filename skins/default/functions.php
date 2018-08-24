@@ -95,8 +95,10 @@ if (!function_exists('magikCreta_logo_image')) {
             $logoUrl = $creta_Options['header_logo']['url'];
             ?>
             <a href="<?php echo esc_url(get_home_url()); ?>">
-                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true" alt="<?php bloginfo('name'); ?>" class="logo_normal">
-                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true" alt="<?php bloginfo('name'); ?>" class="logo_sticky">
+                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true"
+                     alt="<?php bloginfo('name'); ?>" class="logo_normal">
+                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true"
+                     alt="<?php bloginfo('name'); ?>" class="logo_sticky">
             </a>
             <?php
         } else { ?>
@@ -253,7 +255,7 @@ if (!function_exists('magikCreta_header_service')) {
                 </div>
             </div>
 
-            <?php
+        <?php
 
         endif;
     }
@@ -625,6 +627,64 @@ if (!function_exists('magikCreta_bestseller_products')) {
     }
 }
 
+if (!function_exists('magikCreta_recent_products')) {
+    function magikCreta_recent_products()
+    {
+        global $creta_Options;
+
+        if (isset($creta_Options['enable_home_bestseller_products']) && !empty($creta_Options['enable_home_bestseller_products'])) {
+            ?>
+            <div class="container-fluid margin_80_0">
+                <div class="main_title_2">
+                    <?php
+                    if (isset($creta_Options['home_recent_products-text']) && isset($creta_Options['home_recent_products-heading'])) { ?>
+                        <span><em></em></span>
+                        <h2><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-heading']); ?></h2>
+                        <p><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-text']); ?></p>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <div id="reccomended" class="owl-carousel owl-theme">
+                    <?php
+                    $args = array(
+                        'post_type' => 'product',
+                        'post_status' => 'publish',
+                        'ignore_sticky_posts' => 1,
+                        'posts_per_page' => $creta_Options['recent_per_page'],
+                    );
+
+                    $loop = new WP_Query($args);
+
+                    if ($loop->have_posts()) {
+                        while ($loop->have_posts()) : $loop->the_post();
+                            magikCreta_recentitem_template();
+                        endwhile;
+                    } else {
+                        esc_attr_e('No products found', 'creta');
+                    }
+
+                    wp_reset_postdata();
+
+
+                    ?>
+
+                    <!-- /item -->
+                </div>
+                <!-- /carousel -->
+                <div class="container">
+                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">View all Tours</a>
+                    </p>
+                </div>
+                <!-- /container -->
+                <hr class="large">
+            </div>
+        <?php } ?>
+        <?php
+
+    }
+}
+
 if (!function_exists('magikCreta_new_products')) {
     function magikCreta_new_products()
     {
@@ -907,6 +967,66 @@ if (!function_exists('magikCreta_newproduct_template')) {
     }
 }
 
+if (!function_exists('magikCreta_recentitem_template')) {
+    function magikCreta_recentitem_template()
+    {
+
+        $MagikCreta = new MagikCreta();
+        global $product, $woocommerce_loop, $yith_wcwl, $post;
+        $imageUrl = wc_placeholder_img_src();
+        if (has_post_thumbnail())
+            $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
+
+        ?>
+        <div class="item">
+            <div class="box_grid">
+                <figure>
+                    <?php
+                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
+                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
+                        ?>
+                        <a class="wish_bt"
+                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
+                        ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
+                        <?php
+                    }
+                    ?>
+                    <!--                    <a href="#0" class="wish_bt"></a>-->
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
+                             alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
+                        <!--                        <div class="read_more"><span>Read more</span></div>-->
+                        <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
+                    </a>
+                    <small><?php echo $product_cat; ?></small>
+                </figure>
+                <div class="wrapper">
+                    <h3><a href="<?php the_permalink(); ?>"
+                           title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
+                            <?php echo htmlspecialchars_decode($post->post_title); ?></a>
+                    </h3>
+                    <?php //the_content();
+                    ?>
+                    <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
+                    <span class="price">From <strong>$54</strong> /per person</span>
+                </div>
+                <ul>
+                    <li><i class="icon_clock_alt"></i> 1h 30min</li>
+                    <li>
+                        <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /item -->
+        <?php
+
+    }
+}
+
+
 if (!function_exists('magikCreta_productitem_template')) {
     function magikCreta_productitem_template()
     {
@@ -919,7 +1039,7 @@ if (!function_exists('magikCreta_productitem_template')) {
 
         ?>
 
-        <div class="item">
+        <div class="item col-4">
             <div class="item-inner">
                 <div class="item-img">
                     <div class="item-img-info">
