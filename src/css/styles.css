@@ -2763,15 +2763,7 @@ a.box_feat {
   display: inline-block; }
 
 .score span {
-  display: inline-block;
-  position: relative;
-  top: 7px;
-  margin-right: 8px;
-  font-size: 12px;
-  font-size: 0.75rem;
-  text-align: right;
-  line-height: 1.1;
-  font-weight: 500; }
+  margin-right: 8px; }
   .score span em {
     display: block;
     font-weight: normal;

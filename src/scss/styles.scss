@@ -2776,14 +2776,14 @@ a.box_feat {
     display: inline-block;
   }
   span {
-    display: inline-block;
-    position: relative;
-    top: 7px;
+    //display: inline-block;
+    //position: relative;
+    //top: 7px;
     margin-right: 8px;
-    @include fontSize(12px);
-    text-align: right;
-    line-height: 1.1;
-    font-weight: 500;
+    //@include fontSize(12px);
+    //text-align: right;
+    //line-height: 1.1;
+    //font-weight: 500;
     em {
       display: block;
       font-weight: normal;

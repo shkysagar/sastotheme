@@ -323,70 +323,9 @@ if (!function_exists('magikCreta_featured_products')) {
                 </section>
                 <!-- /section -->
 
-                <section>
-                    <div class="main_title_3">
-                        <span><em></em></span>
-                        <h2>Popular Restaurants</h2>
-                        <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="restaurant-detail.html" class="grid_item">
-                                <figure>
-                                    <div class="score"><strong>8.5</strong></div>
-                                    <img src="img/restaurant_1.jpg" class="img-fluid" alt="">
-                                    <div class="info">
-                                        <h3>Da Alfredo</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="restaurant-detail.html" class="grid_item">
-                                <figure>
-                                    <div class="score"><strong>7.9</strong></div>
-                                    <img src="img/restaurant_2.jpg" class="img-fluid" alt="">
-                                    <div class="info">
-                                        <h3>Slow Food</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="restaurant-detail.html" class="grid_item">
-                                <figure>
-                                    <div class="score"><strong>7.5</strong></div>
-                                    <img src="img/restaurant_3.jpg" class="img-fluid" alt="">
-                                    <div class="info">
-                                        <h3>Bella Napoli</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="restaurant-detail.html" class="grid_item">
-                                <figure>
-                                    <div class="score"><strong>9.0</strong></div>
-                                    <img src="img/restaurant_4.jpg" class="img-fluid" alt="">
-                                    <div class="info">
-                                        <h3>Marcus</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /row -->
-                    <a href="restaurants-grid-isotope.html"><strong>View all (157) <i
-                                    class="arrow_carrot-right"></i></strong></a>
-                </section>
-                <!-- /section -->
             </div>
             <!-- /container -->
-            <div class="featured-pro">
+            <div class="featured-pro d-none">
                 <div class="container">
                     <div class="slider-items-products">
                         <div class="featured-block">
