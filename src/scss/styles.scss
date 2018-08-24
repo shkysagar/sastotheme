@@ -36,6 +36,7 @@
 /*============================================================================================*/
 @import 'variables';
 @import 'mixin';
+
 /*Google web font family*/
 //@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,800");
 //main container
@@ -2820,19 +2821,19 @@ a.box_feat {
     line-height: $line-height-none;
     @include border-radius(3px);
     &:after {
-      font-family: 'ElegantIcons';
-      content: "\e030";
+      font-family: 'font-electro';
+      content: "\67";
       @include transition-default (all, 0.5s, ease);
     }
     &.liked:after {
-      content: "\e089";
+      //content: "\e089";
       color: $color-1;
     }
     &:hover.liked:after {
       color: $color-1;
     }
     &:hover:after {
-      content: "\e089";
+      //content: "\e089";
       color: #fff;
     }
   }

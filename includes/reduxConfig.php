@@ -244,7 +244,6 @@ if (class_exists('WooCommerce')) {
 }
 
 
-
 // -> Home Settings
 Redux::setSection($opt_name, array(
     'title' => esc_html__('Home Settings', 'creta'),
@@ -286,6 +285,157 @@ Redux::setSection($opt_name, array(
 
 
         ),
+
+
+        array(
+            'id' => 'header_breadcrumb',
+            'type' => 'media',
+            'required' => array('theme_layout', '=', 'version2'),
+            'title' => esc_html__('Header breadcrumb image', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('Upload Header breadcrumb image ', 'creta')
+        ),
+
+
+    ), // fields array ends
+));
+
+// -> Recent Product Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Recent Product', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-time',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
+        array(
+            'id' => 'enable_home_recent_products',
+            'type' => 'switch',
+            'required' => array('theme_layout', '=', 'default'),
+            'title' => esc_html__('Show Recent Products', 'creta'),
+            'subtitle' => esc_html__('You can show recent products on home page.', 'creta')
+        ),
+        array(
+            'id' => 'home_recent_products-heading',
+            'type' => 'text',
+            'required' => array('enable_home_recent_products', '=', '1'),
+            'title' => esc_html__('Home Recent products Heading', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page recent_products-heading ', 'creta')
+
+        ),
+        array(
+            'id' => 'home_recent_products-text',
+            'type' => 'text',
+            'required' => array('enable_home_recent_products', '=', '1'),
+            'title' => esc_html__('Home Recent products text', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page recent_products-text ', 'creta')
+
+        ),
+
+        array(
+            'id' => 'recent_per_page',
+            'type' => 'text',
+            'required' => array('enable_home_recent_products', '=', '1'),
+            'title' => esc_html__('Number of Recent Products', 'creta'),
+            'subtitle' => esc_html__('Number of Recent products on home page.', 'creta')
+        ),
+
+    ),
+));
+
+
+// -> Feature Product Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Feature Product', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-tag',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
+        array(
+            'id' => 'enable_home_featured_products',
+            'type' => 'switch',
+            'required' => array('theme_layout', '=', 'default'),
+            'title' => esc_html__('Show Featured Products', 'creta'),
+            'subtitle' => esc_html__('You can show featured products on home page.', 'creta')
+        ),
+        array(
+            'id' => 'enable_home_featured_products-heading',
+            'type' => 'text',
+            'required' => array('enable_home_featured_products', '=', '1'),
+            'title' => esc_html__('Home Featured Products Heading', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page featured products Heading ', 'creta')
+        ),
+
+        array(
+            'id' => 'enable_home_featured_products-text',
+            'type' => 'text',
+            'required' => array('enable_home_featured_products', '=', '1'),
+            'title' => esc_html__('Home Featured Products Text', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page featured products text ', 'creta')
+        ),
+
+        array(
+            'id' => 'featured_per_page',
+            'type' => 'text',
+            'required' => array('enable_home_featured_products', '=', '1'),
+            'title' => esc_html__('Number of Featured Products', 'creta'),
+            'subtitle' => esc_html__('Number of Featured products on home page.', 'creta')
+        ),
+    ),
+));
+
+// -> Recommended Products Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Recommended Products ', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-cart',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
+        array(
+            'id' => 'enable_home_recommended_products',
+            'type' => 'switch',
+            'required' => array('theme_layout', '=', 'default'),
+            'title' => esc_html__('Show Recommended Products', 'creta'),
+            'subtitle' => esc_html__('You can show Recommended products on home page.', 'creta')
+        ),
+        array(
+            'id' => 'enable_home_recommended_products-heading',
+            'type' => 'text',
+            'required' => array('enable_home_recommended_products', '=', '1'),
+            'title' => esc_html__('Home Recommended Products Heading', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page recommended products Heading ', 'creta')
+        ),
+        array(
+            'id' => 'enable_home_recommended_products-text',
+            'type' => 'text',
+            'required' => array('enable_home_recommended_products', '=', '1'),
+            'title' => esc_html__('Home Recommended Products Text', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('home page recommended products text ', 'creta')
+        ),
+        array(
+            'id' => 'recommended_per_page',
+            'type' => 'text',
+            'required' => array('enable_home_recommended_products', '=', '1'),
+            'title' => esc_html__('Number of Recommended Products', 'creta'),
+            'subtitle' => esc_html__('Number of Recommended products on home page.', 'creta')
+        ),
+    ),
+));
+
+
+
+// -> Homepage slider Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Homepage slider ', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-cart',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
         array(
             'id' => 'enable_home_gallery',
             'type' => 'switch',
@@ -338,7 +488,17 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Home slider Side Banner-2 URL', 'creta'),
             'subtitle' => esc_html__('URL for the banner.', 'creta'),
         ),
+    ),
+));
 
+
+// -> Slider sub Banners Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Slider sub Banners ', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-cart',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
         array(
             'id' => 'enable_home_sub_banners',
             'type' => 'switch',
@@ -474,8 +634,17 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Home slider sub Banner-5 text', 'creta'),
             'subtitle' => esc_html__('Title for the banner-5.', 'creta'),
         ),
+    ),
+));
 
 
+// -> Hot Deal Product Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Hot Deal Product', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-time',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
         array(
             'id' => 'enable_home_hotdeal_products',
             'type' => 'switch',
@@ -492,6 +661,17 @@ Redux::setSection($opt_name, array(
             'subtitle' => esc_html__('You can show Hot Deal on Product Detail page.', 'creta')
         ),
 
+
+    ),
+));
+
+// -> Products By Catagories Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Products By Catagories', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-time',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
 
         array(
             'id' => 'enable_home_new_products',
@@ -511,6 +691,16 @@ Redux::setSection($opt_name, array(
             'subtitle' => esc_html__('Please choose New Product Category to show  its product in home page.', 'creta'),
             'desc' => '',
         ),
+    ),
+));
+
+// -> Best Seller Products Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Best Seller Products', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-time',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
 
         array(
             'id' => 'enable_home_bestseller_products',
@@ -545,73 +735,16 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Number of Bestseller Products', 'creta'),
             'subtitle' => esc_html__('Number of Bestseller products on home page.', 'creta')
         ),
+    ),
+));
 
-        array(
-            'id' => 'enable_home_featured_products',
-            'type' => 'switch',
-            'required' => array('theme_layout', '=', 'default'),
-            'title' => esc_html__('Show Featured Products', 'creta'),
-            'subtitle' => esc_html__('You can show featured products on home page.', 'creta')
-        ),
-
-        array(
-            'id' => 'enable_home_featured_products-text',
-            'type' => 'text',
-            'required' => array('enable_home_featured_products', '=', '1'),
-            'title' => esc_html__('Home Featured Products Text', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('home page featured products text ', 'creta')
-        ),
-
-
-        array(
-            'id' => 'featured_product_url',
-            'type' => 'text',
-            'required' => array('enable_home_featured_products', '=', '1'),
-            'title' => esc_html__('Home Featured  Url', 'creta'),
-            'subtitle' => esc_html__('Home Featured  Url.', 'creta'),
-        ),
-
-        array(
-            'id' => 'featured_per_page',
-            'type' => 'text',
-            'required' => array('enable_home_featured_products', '=', '1'),
-            'title' => esc_html__('Number of Featured Products', 'creta'),
-            'subtitle' => esc_html__('Number of Featured products on home page.', 'creta')
-        ),
-
-
-        array(
-            'id' => 'enable_home_recommended_products',
-            'type' => 'switch',
-            'required' => array('theme_layout', '=', 'default'),
-            'title' => esc_html__('Show Recommended Products', 'creta'),
-            'subtitle' => esc_html__('You can show Recommended products on home page.', 'creta')
-        ),
-        array(
-            'id' => 'enable_home_recommended_products-text',
-            'type' => 'text',
-            'required' => array('enable_home_recommended_products', '=', '1'),
-            'title' => esc_html__('Home Recommended Products Text', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('home page recommended products text ', 'creta')
-        ),
-        array(
-            'id' => 'recommended_product_url',
-            'type' => 'text',
-            'required' => array('enable_home_recommended_products', '=', '1'),
-            'title' => esc_html__('Home Recommended   Url', 'creta'),
-            'subtitle' => esc_html__('Home Recommended   Url.', 'creta'),
-        ),
-        array(
-            'id' => 'recommended_per_page',
-            'type' => 'text',
-            'required' => array('enable_home_recommended_products', '=', '1'),
-            'title' => esc_html__('Number of Recommended Products', 'creta'),
-            'subtitle' => esc_html__('Number of Recommended products on home page.', 'creta')
-        ),
-
-
+// -> Related Products Settings
+Redux::setSection($opt_name, array(
+    'title' => esc_html__('Related Products', 'creta'),
+//    'desc' => esc_html__('Home page settings ', 'creta'),
+    'icon' => 'el-icon-time',
+    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+    'fields' => array(
         array(
             'id' => 'enable_home_related_products',
             'type' => 'switch',
@@ -641,107 +774,10 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Number of Related Products', 'creta'),
             'subtitle' => esc_html__('Number of Related products on home page.', 'creta')
         ),
-
-
-        array(
-            'id' => 'enable_home_upsell_products',
-            'type' => 'switch',
-            'title' => esc_html__('Show Upsell Products', 'creta'),
-            'subtitle' => esc_html__('You can show Upsell products on home page.', 'creta')
-        ),
-        array(
-            'id' => 'upsell_products-text',
-            'type' => 'text',
-            'required' => array(array('enable_home_upsell_products', '=', '1'), array('theme_layout', '=', 'default')),
-            'title' => esc_html__('Upsell Products text', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('upsell products text ', 'creta')
-
-        ),
-        array(
-            'id' => 'upsell_product_url',
-            'type' => 'text',
-            'required' => array(array('enable_home_upsell_products', '=', '1'), array('theme_layout', '=', 'default')),
-            'title' => esc_html__('Home Upsell   Url', 'creta'),
-            'subtitle' => esc_html__('Home Upsell  Url.', 'creta'),
-        ),
-        array(
-            'id' => 'upsell_per_page',
-            'type' => 'text',
-            'required' => array('enable_home_upsell_products', '=', '1'),
-            'title' => esc_html__('Number of Upsell Products', 'creta'),
-            'subtitle' => esc_html__('Number of Upsell products on home page.', 'creta')
-        ),
-
-        array(
-            'id' => 'enable_cross_sells_products',
-            'type' => 'switch',
-            'title' => esc_html__('Show cross sells Products', 'creta'),
-            'subtitle' => esc_html__('You can show cross sells products.', 'creta')
-        ),
-
-        array(
-            'id' => 'cross_per_page',
-            'type' => 'text',
-            'required' => array('enable_cross_sells_products', '=', '1'),
-            'title' => esc_html__('Number of cross sells Products', 'creta'),
-            'subtitle' => esc_html__('Number of cross sells Products', 'creta')
-        ),
-
-        array(
-            'id' => 'header_breadcrumb',
-            'type' => 'media',
-            'required' => array('theme_layout', '=', 'version2'),
-            'title' => esc_html__('Header breadcrumb image', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('Upload Header breadcrumb image ', 'creta')
-        ),
-        array(
-            'id' => 'enable_home_blog_posts',
-            'type' => 'switch',
-            'required' => array('theme_layout', '=', 'default'),
-            'title' => esc_html__('Show Home Blog', 'creta'),
-            'subtitle' => esc_html__('You can show latest blog post on home page.', 'creta')
-        ),
-
-    ), // fields array ends
-));
-// -> Recent Product Settings
-Redux::setSection($opt_name, array(
-    'title' => esc_html__('Recent Product', 'creta'),
-//    'desc' => esc_html__('Home page settings ', 'creta'),
-    'icon' => 'el-icon-time',
-    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
-    'fields' => array(
-        array(
-            'id' => 'home_recent_products-heading',
-            'type' => 'text',
-//            'required' => array('enable_home_bestseller_products', '=', '1'),
-            'title' => esc_html__('Home Recent products Heading', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('home page recent_products-heading ', 'creta')
-
-        ),
-        array(
-            'id' => 'home_recent_products-text',
-            'type' => 'text',
-//            'required' => array('enable_home_bestseller_products', '=', '1'),
-            'title' => esc_html__('Home Recent products text', 'creta'),
-            'desc' => esc_html__('', 'creta'),
-            'subtitle' => esc_html__('home page recent_products-text ', 'creta')
-
-        ),
-
-        array(
-            'id' => 'recent_per_page',
-            'type' => 'text',
-//            'required' => array('enable_home_bestseller_products', '=', '1'),
-            'title' => esc_html__('Number of Recent Products', 'creta'),
-            'subtitle' => esc_html__('Number of Recent products on home page.', 'creta')
-        ),
-
     ),
 ));
+
+
 // Edgesettings: General Settings Tab
 Redux::setSection($opt_name, array(
     'icon' => 'el-icon-cogs',
@@ -815,70 +851,6 @@ Redux::setSection($opt_name, array(
     )
 ));
 
-// Edgesettings: General Options -> Styling Options Settings Tab
-Redux::setSection($opt_name, array(
-    'icon' => 'el-icon-website',
-    'title' => esc_html__('Styling Options', 'creta'),
-
-    'fields' => array(
-        array(
-            'id' => 'opt-animation',
-            'type' => 'switch',
-            'title' => esc_html__('Use animation effect', 'creta'),
-            'subtitle' => esc_html__('', 'creta'),
-            'default' => 0,
-            'on' => 'On',
-            'off' => 'Off',
-        ),
-
-        array(
-            'id' => 'set_body_background_img_color',
-            'type' => 'switch',
-            'title' => esc_html__('Set Body Background', 'creta'),
-            'subtitle' => esc_html__('', 'creta'),
-            'default' => 0,
-            'on' => 'On',
-            'off' => 'Off',
-        ),
-        array(
-            'id' => 'opt-background',
-            'type' => 'background',
-            'required' => array('set_body_background_img_color', '=', '1'),
-            'output' => array('body'),
-            'title' => esc_html__('Body Background', 'creta'),
-            'subtitle' => esc_html__('Body background with image, color, etc.', 'creta'),
-            'transparent' => false,
-        ),
-        array(
-            'id' => 'opt-color-footer',
-            'type' => 'color',
-            'title' => esc_html__('Footer Background Color', 'creta'),
-            'subtitle' => esc_html__('Pick a background color for the footer.', 'creta'),
-            'validate' => 'color',
-            'transparent' => false,
-            'mode' => 'background',
-            'output' => array('footer', '.footer-bottom')
-        ),
-        array(
-            'id' => 'opt-color-rgba',
-            'type' => 'color',
-            'title' => esc_html__('Header Nav Menu Background', 'creta'),
-            'output' => array('.mgk-main-menu'),
-            'mode' => 'background',
-            'validate' => 'color',
-            'transparent' => false,
-        ),
-        array(
-            'id' => 'opt-color-header',
-            'type' => 'color',
-            'title' => esc_html__('Header Background', 'creta'),
-            'transparent' => false,
-            'output' => array('header'),
-            'mode' => 'background',
-        ),
-
-    )
-));
 
 // header tab
 Redux::setSection($opt_name, array(
@@ -979,36 +951,6 @@ Redux::setSection($opt_name, array(
 
 
     ) //fields end
-));
-// Edgesettings: Menu Tab
-Redux::setSection($opt_name, array(
-    'icon' => 'el el-website icon',
-    'title' => esc_html__('Menu', 'creta'),
-    'heading' => esc_html__('All Menu related options are listed here.', 'creta'),
-    'desc' => esc_html__('', 'creta'),
-    'fields' => array(
-        array(
-            'id' => 'show_menu_arrow',
-            'type' => 'switch',
-            'title' => esc_html__('Show Menu Arrow', 'creta'),
-            'desc' => esc_html__('Show arrow in menu.', 'creta'),
-
-        ),
-        array(
-            'id' => 'login_button_pos',
-            'type' => 'radio',
-            'title' => esc_html__('Show Login/sign and logout link', 'creta'),
-            'desc' => esc_html__('Please Select any option from above.', 'creta'),
-            //Must provide key => value pairs for radio options
-            'options' => array(
-                'none' => 'None',
-                'toplinks' => 'In Top Menu',
-                'main_menu' => 'In Main Menu'
-            ),
-            'default' => 'none'
-        )
-
-    ) // fields ends here
 ));
 // Edgesettings: Footer Tab
 Redux::setSection($opt_name, array(
@@ -1115,6 +1057,13 @@ Redux::setSection($opt_name, array(
 
             ),
             'default' => '2'
+        ),
+        array(
+            'id' => 'enable_home_blog_posts',
+            'type' => 'switch',
+            'required' => array('theme_layout', '=', 'default'),
+            'title' => esc_html__('Show Home Blog', 'creta'),
+            'subtitle' => esc_html__('You can show latest blog post on home page.', 'creta')
         ),
         array(
             'id' => 'blog_show_authors_bio',

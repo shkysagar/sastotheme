@@ -632,7 +632,7 @@ if (!function_exists('magikCreta_recent_products')) {
     {
         global $creta_Options;
 
-        if (isset($creta_Options['enable_home_bestseller_products']) && !empty($creta_Options['enable_home_bestseller_products'])) {
+        if (isset($creta_Options['enable_home_recent_products']) && !empty($creta_Options['enable_home_recent_products'])) {
             ?>
             <div class="container-fluid margin_80_0">
                 <div class="main_title_2">
@@ -651,9 +651,9 @@ if (!function_exists('magikCreta_recent_products')) {
                         'post_type' => 'product',
                         'post_status' => 'publish',
                         'ignore_sticky_posts' => 1,
+                        'taxonomy' => 'product_cat',
                         'posts_per_page' => $creta_Options['recent_per_page'],
                     );
-
                     $loop = new WP_Query($args);
 
                     if ($loop->have_posts()) {
@@ -673,7 +673,7 @@ if (!function_exists('magikCreta_recent_products')) {
                 </div>
                 <!-- /carousel -->
                 <div class="container">
-                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">View all Tours</a>
+                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">Go to shop</a>
                     </p>
                 </div>
                 <!-- /container -->
@@ -974,6 +974,7 @@ if (!function_exists('magikCreta_recentitem_template')) {
         $MagikCreta = new MagikCreta();
         global $product, $woocommerce_loop, $yith_wcwl, $post;
         $imageUrl = wc_placeholder_img_src();
+
         if (has_post_thumbnail())
             $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
 
@@ -1000,7 +1001,7 @@ if (!function_exists('magikCreta_recentitem_template')) {
                         <!--                        <div class="read_more"><span>Read more</span></div>-->
                         <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
                     </a>
-                    <small><?php echo $product_cat; ?></small>
+                    <small><?php //echo $product->get_categories(); ?></small>
                 </figure>
                 <div class="wrapper">
                     <h3><a href="<?php the_permalink(); ?>"

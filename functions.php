@@ -199,6 +199,7 @@ class MagikCreta
         wp_enqueue_style('bootstrap.min', MAGIKCRETA_THEME_URI . '/src/css/bootstrap.min.css', array(), '');
         wp_enqueue_style('style', MAGIKCRETA_THEME_URI . '/src/css/styles.css', array(), '');
         wp_enqueue_style('custom', MAGIKCRETA_THEME_URI . '/src/css/custom.css', array(), '');
+        wp_enqueue_style('electro', MAGIKCRETA_THEME_URI . '/src/css/font-electro.min.css', array(), '');
 //        }
 
         //theme js

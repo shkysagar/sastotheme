@@ -2810,20 +2810,18 @@ a.box_feat {
     -ms-border-radius: 3px;
     border-radius: 3px; }
     .box_grid a.wish_bt:after {
-      font-family: 'ElegantIcons';
-      content: "\e030";
+      font-family: 'font-electro';
+      content: "\67";
       -moz-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
       -webkit-transition: all 0.5s ease;
       -ms-transition: all 0.5s ease;
       transition: all 0.5s ease; }
     .box_grid a.wish_bt.liked:after {
-      content: "\e089";
       color: #fc5b62; }
     .box_grid a.wish_bt:hover.liked:after {
       color: #fc5b62; }
     .box_grid a.wish_bt:hover:after {
-      content: "\e089";
       color: #fff; }
   .box_grid figure {
     margin-bottom: 0;
