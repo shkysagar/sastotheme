@@ -146,6 +146,316 @@ if (!function_exists('magikCreta_search_form')) {
     }
 }
 
+//Recent product
+
+if (!function_exists('magikCreta_recent_products')) {
+    function magikCreta_recent_products()
+    {
+        global $creta_Options;
+
+        if (isset($creta_Options['enable_home_recent_products']) && !empty($creta_Options['enable_home_recent_products'])) {
+            ?>
+            <div class="container-fluid margin_80_0">
+                <div class="main_title_2">
+                    <?php
+                    if (isset($creta_Options['home_recent_products-text']) && isset($creta_Options['home_recent_products-heading'])) { ?>
+                        <span><em></em></span>
+                        <h2><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-heading']); ?></h2>
+                        <p><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-text']); ?></p>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <div id="reccomended" class="owl-carousel owl-theme">
+                    <?php
+                    $args = array(
+                        'post_type' => 'product',
+                        'post_status' => 'publish',
+                        'ignore_sticky_posts' => 1,
+                        'taxonomy' => 'product_cat',
+                        'posts_per_page' => $creta_Options['recent_per_page'],
+                    );
+                    $loop = new WP_Query($args);
+
+                    if ($loop->have_posts()) {
+                        while ($loop->have_posts()) : $loop->the_post();
+                            magikCreta_recentitem_template();
+                        endwhile;
+                    } else {
+                        esc_attr_e('No products found', 'creta');
+                    }
+
+                    wp_reset_postdata();
+
+
+                    ?>
+
+                    <!-- /item -->
+                </div>
+                <!-- /carousel -->
+                <div class="container">
+                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">Go to shop</a>
+                    </p>
+                </div>
+                <!-- /container -->
+                <hr class="">
+            </div>
+        <?php } ?>
+        <?php
+
+    }
+}
+
+if (!function_exists('magikCreta_recentitem_template')) {
+    function magikCreta_recentitem_template()
+    {
+
+        $MagikCreta = new MagikCreta();
+        global $product, $woocommerce_loop, $yith_wcwl, $post;
+        $imageUrl = wc_placeholder_img_src();
+
+        if (has_post_thumbnail())
+            $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
+
+        ?>
+        <div class="item">
+            <div class="box_grid">
+                <figure>
+                    <?php
+                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
+                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
+                        ?>
+                        <a class="wish_bt"
+                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
+                        ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
+                        <?php
+                    }
+                    ?>
+                    <!--                    <a href="#0" class="wish_bt"></a>-->
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
+                             alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
+                        <!--                        <div class="read_more"><span>Read more</span></div>-->
+                        <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
+                    </a>
+                    <small><?php //echo $product->get_categories();
+                        ?></small>
+                </figure>
+                <div class="wrapper">
+                    <h3><a href="<?php the_permalink(); ?>"
+                           title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
+                            <?php echo htmlspecialchars_decode($post->post_title); ?></a>
+                    </h3>
+                    <?php //the_content();
+                    ?>
+                    <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
+                    <span class="price">From <strong>$54</strong> /per person</span>
+                </div>
+                <ul>
+                    <li><i class="icon_clock_alt"></i> 1h 30min</li>
+                    <li>
+                        <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /item -->
+        <?php
+
+    }
+}
+
+//Feature Product
+
+if (!function_exists('magikCreta_featured_products')) {
+    function magikCreta_featured_products()
+    {
+        global $creta_Options;
+        if (isset($creta_Options['enable_home_featured_products']) && !empty($creta_Options['enable_home_featured_products'])) {
+            ?>
+            <div class="container-fluid margin_30_95 pl-lg-5 pr-lg-5">
+                <section class="add_bottom_45">
+                    <div class="main_title_3">
+                        <?php
+                        if (isset($creta_Options['enable_home_featured_products-text']) && isset($creta_Options['enable_home_featured_products-heading'])) { ?>
+                            <span><em></em></span>
+                            <h2><?php echo htmlspecialchars_decode($creta_Options['enable_home_featured_products-heading']); ?></h2>
+                            <p><?php echo htmlspecialchars_decode($creta_Options['enable_home_featured_products-text']); ?></p>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <div id="" class=" owl-theme row">
+                        <?php
+                        $args = array(
+                            'post_type' => 'product',
+                            'post_status' => 'publish',
+                            'posts_per_page' => $creta_Options['featured_per_page'],
+                            'posts_per_page' => '4',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'product_visibility',
+                                    'field' => 'name',
+                                    'terms' => 'featured',
+                                ),
+                            ),
+                        );
+
+                        $loop = new WP_Query($args);
+                        if ($loop->have_posts()) {
+                            while ($loop->have_posts()) : $loop->the_post();
+                                magikCreta_productitem_template();
+                            endwhile;
+                        } else {
+                            esc_attr_e('No products found', 'creta');
+                        }
+
+                        wp_reset_postdata();
+                        ?>
+
+                        <!-- /item -->
+                    </div>
+                    <!-- /row -->
+                    <a href="hotels-grid-isotope.html"><strong>View all (157) <i
+                                    class="arrow_carrot-right"></i></strong></a>
+                </section>
+                <!-- /section -->
+
+                <section>
+                    <div class="main_title_3">
+                        <span><em></em></span>
+                        <h2>Popular Restaurants</h2>
+                        <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <a href="restaurant-detail.html" class="grid_item">
+                                <figure>
+                                    <div class="score"><strong>8.5</strong></div>
+                                    <img src="img/restaurant_1.jpg" class="img-fluid" alt="">
+                                    <div class="info">
+                                        <h3>Da Alfredo</h3>
+                                    </div>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- /grid_item -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <a href="restaurant-detail.html" class="grid_item">
+                                <figure>
+                                    <div class="score"><strong>7.9</strong></div>
+                                    <img src="img/restaurant_2.jpg" class="img-fluid" alt="">
+                                    <div class="info">
+                                        <h3>Slow Food</h3>
+                                    </div>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- /grid_item -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <a href="restaurant-detail.html" class="grid_item">
+                                <figure>
+                                    <div class="score"><strong>7.5</strong></div>
+                                    <img src="img/restaurant_3.jpg" class="img-fluid" alt="">
+                                    <div class="info">
+                                        <h3>Bella Napoli</h3>
+                                    </div>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- /grid_item -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <a href="restaurant-detail.html" class="grid_item">
+                                <figure>
+                                    <div class="score"><strong>9.0</strong></div>
+                                    <img src="img/restaurant_4.jpg" class="img-fluid" alt="">
+                                    <div class="info">
+                                        <h3>Marcus</h3>
+                                    </div>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- /grid_item -->
+                    </div>
+                    <!-- /row -->
+                    <a href="restaurants-grid-isotope.html"><strong>View all (157) <i
+                                    class="arrow_carrot-right"></i></strong></a>
+                </section>
+                <!-- /section -->
+            </div>
+            <!-- /container -->
+            <div class="featured-pro">
+                <div class="container">
+                    <div class="slider-items-products">
+                        <div class="featured-block">
+                            <div id="featured-slider" class="product-flexslider hidden-buttons">
+                                <div class="home-block-inner">
+                                    <div class="block-title">
+                                        <h2><?php esc_attr_e('Featured', 'creta'); ?><br>
+                                            <em> <?php esc_attr_e('Products', 'creta'); ?></em>
+                                        </h2>
+
+                                    </div>
+                                    <div class="pretext">
+
+                                        <?php
+                                        if (isset($creta_Options['enable_home_featured_products-text'])) {
+
+
+                                            echo htmlspecialchars_decode($creta_Options['enable_home_featured_products-text']);
+                                        }
+                                        ?>
+                                    </div>
+                                    <a class="view_more_bnt"
+                                       href="<?php echo !empty($creta_Options['enable_home_featured_products']) ? esc_url($creta_Options['featured_product_url']) : '#' ?>"><?php esc_attr_e('VIEW ALL ', 'creta'); ?></a>
+                                </div>
+
+                                <div class="slider-items slider-width-col4 products-grid block-content owl-carousel owl-theme">
+
+
+                                    <?php
+                                    $args = array(
+                                        'post_type' => 'product',
+                                        'post_status' => 'publish',
+//                                        'posts_per_page' => $creta_Options['featured_per_page'],
+                                        'posts_per_page' => '4',
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'product_visibility',
+                                                'field' => 'name',
+//                                                'terms' => 'featured',
+                                            ),
+                                        ),
+                                    );
+
+                                    $loop = new WP_Query($args);
+                                    if ($loop->have_posts()) {
+                                        while ($loop->have_posts()) : $loop->the_post();
+                                            magikCreta_productitem_template();
+                                        endwhile;
+                                    } else {
+                                        esc_attr_e('No products found', 'creta');
+                                    }
+
+                                    wp_reset_postdata();
+                                    ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <?php
+        }
+    }
+}
+
+
 if (!function_exists('magikCreta_home_page_banner')) {
     function magikCreta_home_page_banner()
     {
@@ -475,81 +785,6 @@ if (!function_exists('magikCreta_recommended_products')) {
 }
 
 
-if (!function_exists('magikCreta_featured_products')) {
-    function magikCreta_featured_products()
-    {
-        global $creta_Options;
-        if (isset($creta_Options['enable_home_featured_products']) && !empty($creta_Options['enable_home_featured_products'])) {
-            ?>
-            <div class="featured-pro">
-                <div class="container">
-                    <div class="slider-items-products">
-                        <div class="featured-block">
-                            <div id="featured-slider" class="product-flexslider hidden-buttons">
-                                <div class="home-block-inner">
-                                    <div class="block-title">
-                                        <h2><?php esc_attr_e('Featured', 'creta'); ?><br>
-                                            <em> <?php esc_attr_e('Products', 'creta'); ?></em>
-                                        </h2>
-
-                                    </div>
-                                    <div class="pretext">
-
-                                        <?php
-                                        if (isset($creta_Options['enable_home_featured_products-text'])) {
-
-
-                                            echo htmlspecialchars_decode($creta_Options['enable_home_featured_products-text']);
-                                        }
-                                        ?>
-                                    </div>
-                                    <a class="view_more_bnt"
-                                       href="<?php echo !empty($creta_Options['enable_home_featured_products']) ? esc_url($creta_Options['featured_product_url']) : '#' ?>"><?php esc_attr_e('VIEW ALL ', 'creta'); ?></a>
-                                </div>
-
-                                <div class="slider-items slider-width-col4 products-grid block-content owl-carousel owl-theme">
-
-
-                                    <?php
-                                    $args = array(
-                                        'post_type' => 'product',
-                                        'post_status' => 'publish',
-//                                        'posts_per_page' => $creta_Options['featured_per_page'],
-                                        'posts_per_page' => '4',
-                                        'tax_query' => array(
-                                            array(
-                                                'taxonomy' => 'product_visibility',
-                                                'field' => 'name',
-//                                                'terms' => 'featured',
-                                            ),
-                                        ),
-                                    );
-
-                                    $loop = new WP_Query($args);
-                                    if ($loop->have_posts()) {
-                                        while ($loop->have_posts()) : $loop->the_post();
-                                            magikCreta_productitem_template();
-                                        endwhile;
-                                    } else {
-                                        esc_attr_e('No products found', 'creta');
-                                    }
-
-                                    wp_reset_postdata();
-                                    ?>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <?php
-        }
-    }
-}
-
 if (!function_exists('magikCreta_bestseller_products')) {
     function magikCreta_bestseller_products()
     {
@@ -627,63 +862,6 @@ if (!function_exists('magikCreta_bestseller_products')) {
     }
 }
 
-if (!function_exists('magikCreta_recent_products')) {
-    function magikCreta_recent_products()
-    {
-        global $creta_Options;
-
-        if (isset($creta_Options['enable_home_recent_products']) && !empty($creta_Options['enable_home_recent_products'])) {
-            ?>
-            <div class="container-fluid margin_80_0">
-                <div class="main_title_2">
-                    <?php
-                    if (isset($creta_Options['home_recent_products-text']) && isset($creta_Options['home_recent_products-heading'])) { ?>
-                        <span><em></em></span>
-                        <h2><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-heading']); ?></h2>
-                        <p><?php echo htmlspecialchars_decode($creta_Options['home_recent_products-text']); ?></p>
-                        <?php
-                    }
-                    ?>
-                </div>
-                <div id="reccomended" class="owl-carousel owl-theme">
-                    <?php
-                    $args = array(
-                        'post_type' => 'product',
-                        'post_status' => 'publish',
-                        'ignore_sticky_posts' => 1,
-                        'taxonomy' => 'product_cat',
-                        'posts_per_page' => $creta_Options['recent_per_page'],
-                    );
-                    $loop = new WP_Query($args);
-
-                    if ($loop->have_posts()) {
-                        while ($loop->have_posts()) : $loop->the_post();
-                            magikCreta_recentitem_template();
-                        endwhile;
-                    } else {
-                        esc_attr_e('No products found', 'creta');
-                    }
-
-                    wp_reset_postdata();
-
-
-                    ?>
-
-                    <!-- /item -->
-                </div>
-                <!-- /carousel -->
-                <div class="container">
-                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">Go to shop</a>
-                    </p>
-                </div>
-                <!-- /container -->
-                <hr class="large">
-            </div>
-        <?php } ?>
-        <?php
-
-    }
-}
 
 if (!function_exists('magikCreta_new_products')) {
     function magikCreta_new_products()
@@ -967,66 +1145,6 @@ if (!function_exists('magikCreta_newproduct_template')) {
     }
 }
 
-if (!function_exists('magikCreta_recentitem_template')) {
-    function magikCreta_recentitem_template()
-    {
-
-        $MagikCreta = new MagikCreta();
-        global $product, $woocommerce_loop, $yith_wcwl, $post;
-        $imageUrl = wc_placeholder_img_src();
-
-        if (has_post_thumbnail())
-            $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
-
-        ?>
-        <div class="item">
-            <div class="box_grid">
-                <figure>
-                    <?php
-                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
-                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
-                        ?>
-                        <a class="wish_bt"
-                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
-                        ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
-                        <?php
-                    }
-                    ?>
-                    <!--                    <a href="#0" class="wish_bt"></a>-->
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
-                             alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
-                        <!--                        <div class="read_more"><span>Read more</span></div>-->
-                        <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
-                    </a>
-                    <small><?php //echo $product->get_categories(); ?></small>
-                </figure>
-                <div class="wrapper">
-                    <h3><a href="<?php the_permalink(); ?>"
-                           title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
-                            <?php echo htmlspecialchars_decode($post->post_title); ?></a>
-                    </h3>
-                    <?php //the_content();
-                    ?>
-                    <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                    <span class="price">From <strong>$54</strong> /per person</span>
-                </div>
-                <ul>
-                    <li><i class="icon_clock_alt"></i> 1h 30min</li>
-                    <li>
-                        <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /item -->
-        <?php
-
-    }
-}
-
 
 if (!function_exists('magikCreta_productitem_template')) {
     function magikCreta_productitem_template()
@@ -1040,86 +1158,18 @@ if (!function_exists('magikCreta_productitem_template')) {
 
         ?>
 
-        <div class="item col-4">
-            <div class="item-inner">
-                <div class="item-img">
-                    <div class="item-img-info">
-                        <a href="<?php the_permalink(); ?>"
-                           title="<?php echo htmlspecialchars_decode($post->post_title); ?>" class="product-image">
-                            <figure class="img-responsive">
-                                <img alt="<?php echo htmlspecialchars_decode($post->post_title); ?>"
-                                     src="<?php echo esc_url($imageUrl[0]); ?>">
-                            </figure>
-                        </a>
-                        <?php if ($product->is_on_sale()) : ?>
-                            <div class="new-label new-top-right">
-                                <?php esc_attr_e('Sale', 'creta'); ?>
-                            </div>
-                        <?php endif; ?>
-                        <div class="box-hover">
-                            <ul class="add-to-links">
-                                <li>
-                                    <?php if (class_exists('YITH_WCQV_Frontend')) { ?>
-                                        <a class="yith-wcqv-button link-quickview" href="#"
-                                           data-product_id="<?php echo esc_html($product->get_id()); ?>"><?php esc_attr_e('Quick View', 'creta'); ?></a>
-                                    <?php } ?>
-                                </li>
-                                <li>
-                                    <?php
-                                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
-                                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
-                                        ?>
-                                        <a href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
-                                        ><?php esc_attr_e('Add to Wishlist', 'creta'); ?></a>
-                                        <?php
-                                    }
-                                    ?>
-                                </li>
-                                <li>
-                                    <?php if (class_exists('YITH_Woocompare_Frontend')) {
-                                        $mgk_yith_cmp = new YITH_Woocompare_Frontend; ?>
-                                        <a href="<?php echo esc_url($mgk_yith_cmp->add_product_url($product->get_id())); ?>"
-                                           class="compare link-compare add_to_compare"
-                                           data-product_id="<?php echo esc_html($product->get_id()); ?>"
-                                        ><?php esc_attr_e('Add to Compare', 'creta');
-                                            ?></a>
-                                        <?php
-                                    }
-                                    ?>
-                                </li>
-                            </ul>
-                        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6">
+            <a href="<?php the_permalink(); ?>" class="grid_item">
+                <figure>
+                    <div class="score">
+                        <strong><?php echo htmlspecialchars_decode($product->get_price_html()); ?></strong></div>
+                    <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid" alt="">
+                    <div class="info">
+
+                        <h3><?php echo htmlspecialchars_decode($post->post_title); ?></h3>
                     </div>
-                </div>
-                <div class="item-info">
-                    <div class="info-inner">
-                        <div class="item-title"><a href="<?php the_permalink(); ?>"
-                                                   title="<?php echo htmlspecialchars_decode($post->post_title); ?>"> <?php echo htmlspecialchars_decode($post->post_title); ?> </a>
-                        </div>
-                        <div class="item-content">
-                            <div class="rating">
-                                <div class="ratings">
-                                    <div class="rating-box">
-                                        <?php $average = $product->get_average_rating(); ?>
-                                        <div style="width:<?php echo esc_html(($average / 5) * 100); ?>%"
-                                             class="rating"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-price">
-                                <div class="price-box">
-                                    <?php echo htmlspecialchars_decode($product->get_price_html()); ?>
-                                </div>
-                            </div>
-                            <div class="action">
-                                <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </figure>
+            </a>
         </div>
 
         <?php

@@ -44,9 +44,10 @@
         </div>
     </section>
 
-    <?php magikCreta_recent_products();?>
+    <?php //magikCreta_recent_products();?>
 
     <?php magikCreta_featured_products(); ?>
+
 
 </main>
 
