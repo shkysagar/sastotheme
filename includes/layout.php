@@ -188,7 +188,7 @@ if (!function_exists('magikCreta_main_menu')) {
         if (has_nav_menu('main_menu')) :
             $args = array(
                 'container' => '',
-                'menu_class' => 'main-menu mega-menu' . $mcls,
+//                'menu_class' => '' . $mcls,
                 'before' => '',
                 'after' => '',
                 'link_before' => '',

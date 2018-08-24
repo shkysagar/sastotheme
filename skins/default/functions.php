@@ -94,8 +94,9 @@ if (!function_exists('magikCreta_logo_image')) {
         } else if (isset($creta_Options['header_logo']['url']) && !empty($creta_Options['header_logo']['url'])) {
             $logoUrl = $creta_Options['header_logo']['url'];
             ?>
-            <a class="logo" title="<?php bloginfo('name'); ?>" href="<?php echo esc_url(get_home_url()); ?> ">
-                <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logoUrl); ?>"/>
+            <a href="<?php echo esc_url(get_home_url()); ?>">
+                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true" alt="<?php bloginfo('name'); ?>" class="logo_normal">
+                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true" alt="<?php bloginfo('name'); ?>" class="logo_sticky">
             </a>
             <?php
         } else { ?>
@@ -511,12 +512,13 @@ if (!function_exists('magikCreta_featured_products')) {
                                     $args = array(
                                         'post_type' => 'product',
                                         'post_status' => 'publish',
-                                        'posts_per_page' => $creta_Options['featured_per_page'],
+//                                        'posts_per_page' => $creta_Options['featured_per_page'],
+                                        'posts_per_page' => '4',
                                         'tax_query' => array(
                                             array(
                                                 'taxonomy' => 'product_visibility',
                                                 'field' => 'name',
-                                                'terms' => 'featured',
+//                                                'terms' => 'featured',
                                             ),
                                         ),
                                     );
@@ -641,7 +643,8 @@ if (!function_exists('magikCreta_new_products')) {
                                     <li>
                                         <div class="new_title">
                                             <h2>
-                                                <strong> <?php esc_attr_e('New', 'creta'); ?> </strong><?php esc_attr_e('Products', 'creta'); ?>
+                                                <strong> <?php esc_attr_e('New', 'creta'); ?> </strong>
+                                                <?php esc_attr_e('Products', 'creta'); ?>
                                             </h2>
 
                                         </div>
