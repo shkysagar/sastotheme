@@ -1,3 +1,22 @@
+/* Sorter */
+.sorter {
+    padding: 0;
+    margin: 0;
+}
+.sorter .actions {
+    float: left;
+}
+.sorter .view-mode {
+    float: left;
+    margin-top: 6px;
+    margin-right: 20px;
+    margin-left: 0px;
+}
+.sorter .sort-by {
+    float: left;
+    margin-top: 6px;
+}
+
 /*============================================================================================*/
 /* Your custom styles below */
 /*============================================================================================*/

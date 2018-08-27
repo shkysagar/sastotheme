@@ -3,7 +3,7 @@
 $MagikCreta = new MagikCreta(); ?>
 <?php //magikCreta_footer_brand_logo(); ?>
 <?php //magikCreta_header_service(); ?>
-<footer class="d-none">
+<footer>
     <!-- BEGIN INFORMATIVE FOOTER -->
     <div class="footer-inner">
         <div class="container">
@@ -68,15 +68,10 @@ $MagikCreta = new MagikCreta(); ?>
     </div>
 
 </footer>
-
+</main>
 </div>
 <?php //magikCreta_backtotop(); ?>
 
-
-<div class="menu-overlay"></div>
-<?php // navigation panel
-//require_once(MAGIKCRETA_THEME_PATH . '/menu_panel.php');
-?>
 
 <?php wp_footer(); ?>
 </body>

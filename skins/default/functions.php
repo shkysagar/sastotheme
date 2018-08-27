@@ -95,9 +95,9 @@ if (!function_exists('magikCreta_logo_image')) {
             $logoUrl = $creta_Options['header_logo']['url'];
             ?>
             <a href="<?php echo esc_url(get_home_url()); ?>">
-                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true"
+                <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
                      alt="<?php bloginfo('name'); ?>" class="logo_normal">
-                <img src="<?php echo esc_url($logoUrl); ?>" height="40" data-retina="true"
+                <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
                      alt="<?php bloginfo('name'); ?>" class="logo_sticky">
             </a>
             <?php
@@ -194,7 +194,8 @@ if (!function_exists('magikCreta_recent_products')) {
                 </div>
                 <!-- /carousel -->
                 <div class="container">
-                    <p class="btn_home_align"><a href="tours-grid-isotope.html" class="btn_1 rounded">Go to shop</a>
+                    <p class="btn_home_align">
+                        <a href="<?php echo $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="btn_1 rounded">Go to shop</a>
                     </p>
                 </div>
                 <!-- /container -->
@@ -240,8 +241,7 @@ if (!function_exists('magikCreta_recentitem_template')) {
                         <!--                        <div class="read_more"><span>Read more</span></div>-->
                         <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
                     </a>
-                    <small><?php //echo $product->get_categories();
-                        ?></small>
+                    <small><?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
                 </figure>
                 <div class="wrapper">
                     <h3><a href="<?php the_permalink(); ?>"

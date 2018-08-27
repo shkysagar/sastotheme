@@ -41,6 +41,13 @@
 //@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,800");
 //main container
 
+.container-fluid{
+  @media (min-width: 1200px)  {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+}
+
 /* MAIN NAVIGATION */
 /* All styles for screen size over 992px*/
 @media only screen and (min-width: 992px) {
@@ -669,7 +676,7 @@ a.btn_map_in,
 
 /*-------- 1.3 Structure --------*/
 /* Header */
-header {
+header.site-head {
   position: fixed;
   left: 0;
   top: 0;
@@ -697,6 +704,7 @@ header {
       }
       .logo_sticky {
         display: inline-block;
+        height: 35px;
       }
     }
   }
@@ -2776,14 +2784,14 @@ a.box_feat {
     display: inline-block;
   }
   span {
-    //display: inline-block;
-    //position: relative;
-    //top: 7px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
     margin-right: 8px;
-    //@include fontSize(12px);
-    //text-align: right;
-    //line-height: 1.1;
-    //font-weight: 500;
+    @include fontSize(12px);
+    text-align: right;
+    line-height: 1.1;
+    font-weight: 500;
     em {
       display: block;
       font-weight: normal;

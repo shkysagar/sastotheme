@@ -207,6 +207,8 @@ class MagikCreta
 
         wp_enqueue_script('jquery.min-js', MAGIKCRETA_THEME_URI . '/src/js/jquery-2.2.4.min.js', array('jquery'), '', true);
         wp_enqueue_script('common_scripts-js', MAGIKCRETA_THEME_URI . '/src/js/common_scripts.js', array('jquery'), '', true);
+        wp_enqueue_script('jquery.cookie.min',MAGIKCRETA_THEME_URI . '/js/jquery.cookie.min.js', array('jquery'), '', true);
+
         wp_enqueue_script('main-js', MAGIKCRETA_THEME_URI . '/src/js/main.js', array('jquery'), '', true);
 
         wp_localize_script('themejs', 'js_creta_vars', array(
@@ -1181,12 +1183,15 @@ class MagikCreta
         <?php
     }
 }
+
 // [product_count] shortcode
-function product_count_shortcode( ) {
-    $count_posts = wp_count_posts( 'product' );
+function product_count_shortcode()
+{
+    $count_posts = wp_count_posts('product');
     return $count_posts->publish;
 }
-add_shortcode( 'product_count', 'product_count_shortcode' );
+
+add_shortcode('product_count', 'product_count_shortcode');
 
 
 // Instantiate theme
