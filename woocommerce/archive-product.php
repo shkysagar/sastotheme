@@ -412,7 +412,19 @@ if (isset($creta_Options['category_pagelayout']) && !empty($creta_Options['categ
         //--></script>
 
 <?php } ?>
+<section class="hero_in general start_bg_zoom">
+    <div class="wrapper">
+        <div class="container">
+            <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+                <h1 class="fadeInUp animated"><span></span>
+                    <?php esc_html(woocommerce_page_title()); ?></h1>
 
+            <?php endif; ?>
+            <?php echo magikCreta_search_form(); ?>
+
+        </div>
+    </div>
+</section>
 <div class="main-container <?php echo esc_html($main) ?>  bounceInUp animated">
     <!-- For version 1, 2, 3, 8 -->
     <!-- For version 1, 2, 3 -->
@@ -471,18 +483,13 @@ if (isset($creta_Options['category_pagelayout']) && !empty($creta_Options['categ
 
                         <?php } else { ?>
                             <div class="page-heading">
-                                <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-                                    <h2> <span class="page-heading-title">
-                      <?php esc_html(woocommerce_page_title()); ?>
-                    </span></h2>
-                                <?php endif; ?>
+
                                 <div class="toolbar">
                                     <?php
                                     /**
                                      * woocommerce_before_shop_loop hook
                                      *
-                                     * @hooked woocommerce_result_count - 20
-                                     * @hooked woocommerce_catalog_ordering - 30
+                                     * @hooked woocommerce_result_count - 40
                                      */
                                     do_action('woocommerce_before_shop_loop');
                                     ?>

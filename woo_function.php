@@ -363,10 +363,10 @@ function magikCreta_woocommerce_breadcrumbs()
 {
     return array(
         'delimiter' => '',
-        'wrap_before' => '<ul>',
-        'wrap_after' => '</ul>',
-        'before' => '<li>',
-        'after' => '<span> &frasl; </span></li>',
+        'wrap_before' => '<ol class="">',
+        'wrap_after' => '</ol>',
+        'before' => '<li class="breadcrumb-item">',
+        'after' => '</li>',
         'home' => _x('Home', 'breadcrumb', 'woocommerce'),
     );
 }

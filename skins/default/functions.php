@@ -129,18 +129,16 @@ if (!function_exists('magikCreta_search_form')) {
         $MagikCreta = new MagikCreta();
         ?>
         <?php if (isset($creta_Options['header_remove_header_search']) && !$creta_Options['header_remove_header_search']) : ?>
-
-        <div class="search-box">
-            <form name="myform" method="GET" action="<?php echo esc_url(home_url('/')); ?>">
+        <form class="fadeInUp animated" name="myform" method="GET" action="<?php echo esc_url(home_url('/')); ?>">
+            <div id="custom-search-input">
                 <input type="text" placeholder="<?php esc_attr_e('Search entire store here...', 'creta'); ?>"
-                       maxlength="70" name="s" class="mgksearch" value="<?php echo get_search_query(); ?>">
+                       maxlength="70" name="s" class="search-query" value="<?php echo get_search_query(); ?>">
                 <?php if (class_exists('WooCommerce')) : ?>
                     <input type="hidden" value="product" name="post_type">
                 <?php endif; ?>
-                <button class="search-btn-bg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-
-            </form>
-        </div>
+                <input type="submit" class="btn_search" value="Search">
+            </div>
+        </form>
     <?php endif; ?>
         <?php
     }
@@ -195,7 +193,8 @@ if (!function_exists('magikCreta_recent_products')) {
                 <!-- /carousel -->
                 <div class="container">
                     <p class="btn_home_align">
-                        <a href="<?php echo $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="btn_1 rounded">Go to shop</a>
+                        <a href="<?php echo $shop_page_url = get_permalink(woocommerce_get_page_id('shop')); ?>"
+                           class="btn_1 rounded">Go to shop</a>
                     </p>
                 </div>
                 <!-- /container -->
@@ -504,7 +503,7 @@ if (!function_exists('magikCreta_header_service')) {
                 </div>
             </div>
 
-        <?php
+            <?php
 
         endif;
     }
