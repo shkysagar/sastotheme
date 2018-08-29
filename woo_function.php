@@ -386,14 +386,14 @@ function magikCreta_single_product_prev_next()
         if (!empty($next)):
             ?>
             <a href="<?php echo esc_url(get_permalink($next->ID)) ?>" class="product-next"><span></span></a>
-            <?php
+        <?php
         endif;
 
         $prev = magikCreta_prev_next_product_object($post->ID, 'prev');
         if (!empty($prev)):
             ?>
             <a href="<?php echo esc_url(get_permalink($prev->ID)) ?>" class="product-prev"><span></span></a>
-            <?php
+        <?php
         endif;
         ?>
     </div>

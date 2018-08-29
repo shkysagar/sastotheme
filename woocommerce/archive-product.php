@@ -318,7 +318,7 @@ if (isset($creta_Options['category_pagelayout']) && !empty($creta_Options['categ
 
                     jQuery('.category-products .products-list').attr('class', 'products-grid products');
 
-                    jQuery('ul.products-grid > li.item').each(function (index, element) {
+                    jQuery('ul.products-grid.row > li.item').each(function (index, element) {
                         var html = '';
 
                         element = jQuery(this);
@@ -334,7 +334,7 @@ if (isset($creta_Options['category_pagelayout']) && !empty($creta_Options['categ
 
                         }
 
-                        element.attr('class', '<?php echo $item_class;?> ' + pgrid);
+                        element.attr('class', '<?php //echo $item_class;?> ' + pgrid);
 
                         html += '<div class="item-inner"><div class="item-img"><div class="item-img-info"><div class="pimg">';
 
@@ -425,7 +425,7 @@ if (isset($creta_Options['category_pagelayout']) && !empty($creta_Options['categ
         </div>
     </div>
 </section>
-<div class="main-container <?php echo esc_html($main) ?>  bounceInUp animated">
+<div class="main-container <?php //echo esc_html($main) ?>  bounceInUp animated">
     <!-- For version 1, 2, 3, 8 -->
     <!-- For version 1, 2, 3 -->
     <div class="container">

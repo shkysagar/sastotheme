@@ -41,6 +41,11 @@
 
         </div>
     </div>
+    <style>
+        .hero_single.version_2:before{
+            background: url("") center center no-repeat;
+        }
+    </style>
 </section>
 
 <?php magikCreta_recent_products(); ?>

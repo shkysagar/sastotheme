@@ -1023,7 +1023,7 @@ Redux::setSection($opt_name, array(
             'type' => 'editor',
             'title' => esc_html__('Bottom Footer Text', 'creta'),
             'subtitle' => esc_html__('You can use the following shortcodes in your footer text: [wp-url] [site-url] [theme-url] [login-url] [logout-url] [site-title] [site-tagline] [current-year]', 'creta'),
-            'default' => esc_html__('Powered by Magik', 'creta'),
+//            'default' => esc_html__('Powered by Magik', 'creta'),
         ),
 
 
