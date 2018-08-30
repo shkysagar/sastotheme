@@ -52,9 +52,7 @@ class MagikCreta
 
     function magikCreta_theme()
     {
-
         global $creta_Options;
-
     }
 
     /** * Theme setup */
@@ -81,19 +79,17 @@ class MagikCreta
             'aside', 'video', 'audio'
         ));
 
-        // Setup the WordPress core custom background feature.
-        $default_color = trim('ffffff', '#');
-        $default_text_color = trim('333333', '#');
+
 
         add_theme_support('custom-background', apply_filters('magikCreta_custom_background_args', array(
-            'default-color' => $default_color,
+//            'default-color' => $default_color,
             'default-attachment' => 'fixed',
         )));
 
         add_theme_support('custom-header', apply_filters('magikCreta_custom_header_args', array(
-            'default-text-color' => $default_text_color,
+/*            'default-text-color' => $default_text_color,*/
             'width' => 1170,
-            'height' => 450,
+            'height' => 420,
 
         )));
 
@@ -207,7 +203,7 @@ class MagikCreta
 
         wp_enqueue_script('jquery.min-js', MAGIKCRETA_THEME_URI . '/src/js/jquery-2.2.4.min.js', array('jquery'), '', true);
         wp_enqueue_script('common_scripts-js', MAGIKCRETA_THEME_URI . '/src/js/common_scripts.js', array('jquery'), '', true);
-        wp_enqueue_script('jquery.cookie.min',MAGIKCRETA_THEME_URI . '/js/jquery.cookie.min.js', array('jquery'), '', true);
+        wp_enqueue_script('jquery.cookie.min', MAGIKCRETA_THEME_URI . '/js/jquery.cookie.min.js', array('jquery'), '', true);
 
         wp_enqueue_script('main-js', MAGIKCRETA_THEME_URI . '/src/js/main.js', array('jquery'), '', true);
 

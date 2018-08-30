@@ -1,4 +1,4 @@
-<section class="hero_single version_2">
+<section class="hero_single version_2 heroImage">
     <div class="wrapper">
         <div class="container">
             <div class="row">
@@ -42,8 +42,9 @@
         </div>
     </div>
     <style>
-        .hero_single.version_2:before{
-            background: url("") center center no-repeat;
+        .heroImage::before{
+            background: url("<?php header_image(); ?>") center center no-repeat !important;
+            background-size: cover;
         }
     </style>
 </section>
