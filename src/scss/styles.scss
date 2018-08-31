@@ -473,7 +473,7 @@ ul, ol {
     }
   }
   p {
-    @include fontSize(24px);
+    @include fontSize(18px);
     font-weight: 300;
     line-height: 1.4;
     @include mobile {
@@ -5470,7 +5470,7 @@ ul.bullets {
 
 .margin_30_95 {
   padding-top: 30px;
-  padding-bottom: 95px;
+  padding-bottom: 0px;
   @include tablet {
     padding-top: 15px;
     padding-bottom: 35px;

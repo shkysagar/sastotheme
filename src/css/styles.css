@@ -443,8 +443,8 @@ ul, ol {
         font-size: 24px;
         font-size: 1.5rem; } }
   .main_title_2 p {
-    font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.4; }
     @media (max-width: 767px) {
@@ -5274,7 +5274,7 @@ ul.bullets {
 
 .margin_30_95 {
   padding-top: 30px;
-  padding-bottom: 95px; }
+  padding-bottom: 0px; }
   @media (max-width: 991px) {
     .margin_30_95 {
       padding-top: 15px;

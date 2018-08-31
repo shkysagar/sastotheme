@@ -43,15 +43,15 @@
     </div>
     <style>
         .heroImage::before{
-            background: url("<?php header_image(); ?>") center center no-repeat !important;
-            background-size: cover;
+            background: url("<?php header_image(); ?>") no-repeat !important;
+            background-size: cover !important;
         }
     </style>
 </section>
 
+<?php magikCreta_featured_products(); ?>
 <?php magikCreta_recent_products(); ?>
 
-<?php magikCreta_featured_products(); ?>
 
 
 

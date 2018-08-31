@@ -276,7 +276,7 @@ if (!function_exists('magikCreta_featured_products')) {
             ?>
             <div class="container-fluid margin_30_95 pl-lg-5 pr-lg-5">
                 <section class="add_bottom_45">
-                    <div class="main_title_3">
+                    <div class="main_title_2">
                         <?php
                         if (isset($creta_Options['enable_home_featured_products-text']) && isset($creta_Options['enable_home_featured_products-heading'])) { ?>
                             <span><em></em></span>
@@ -323,70 +323,6 @@ if (!function_exists('magikCreta_featured_products')) {
 
             </div>
             <!-- /container -->
-            <div class="featured-pro d-none">
-                <div class="container">
-                    <div class="slider-items-products">
-                        <div class="featured-block">
-                            <div id="featured-slider" class="product-flexslider hidden-buttons">
-                                <div class="home-block-inner">
-                                    <div class="block-title">
-                                        <h2><?php esc_attr_e('Featured', 'creta'); ?><br>
-                                            <em> <?php esc_attr_e('Products', 'creta'); ?></em>
-                                        </h2>
-
-                                    </div>
-                                    <div class="pretext">
-
-                                        <?php
-                                        if (isset($creta_Options['enable_home_featured_products-text'])) {
-
-
-                                            echo htmlspecialchars_decode($creta_Options['enable_home_featured_products-text']);
-                                        }
-                                        ?>
-                                    </div>
-                                    <a class="view_more_bnt"
-                                       href="<?php echo !empty($creta_Options['enable_home_featured_products']) ? esc_url($creta_Options['featured_product_url']) : '#' ?>"><?php esc_attr_e('VIEW ALL ', 'creta'); ?></a>
-                                </div>
-
-                                <div class="slider-items slider-width-col4 products-grid block-content owl-carousel owl-theme">
-
-
-                                    <?php
-                                    $args = array(
-                                        'post_type' => 'product',
-                                        'post_status' => 'publish',
-//                                        'posts_per_page' => $creta_Options['featured_per_page'],
-                                        'posts_per_page' => '4',
-                                        'tax_query' => array(
-                                            array(
-                                                'taxonomy' => 'product_visibility',
-                                                'field' => 'name',
-//                                                'terms' => 'featured',
-                                            ),
-                                        ),
-                                    );
-
-                                    $loop = new WP_Query($args);
-                                    if ($loop->have_posts()) {
-                                        while ($loop->have_posts()) : $loop->the_post();
-                                            magikCreta_productitem_template();
-                                        endwhile;
-                                    } else {
-                                        esc_attr_e('No products found', 'creta');
-                                    }
-
-                                    wp_reset_postdata();
-                                    ?>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
             <?php
         }
     }
