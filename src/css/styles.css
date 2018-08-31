@@ -675,7 +675,6 @@ header.site-head {
   top: 0;
   width: 100%;
   padding: 20px 30px;
-  z-index: 99999999;
   border-bottom: 1px solid rgba(255, 255, 255, 0); }
   @media (max-width: 767px) {
     header.site-head {
@@ -744,7 +743,7 @@ ul#top_menu {
           ul#top_menu li a.login, ul#top_menu li a.wishlist_bt_top, ul#top_menu li a.cart-menu-btn {
             top: 2px; } }
         ul#top_menu li a.login:before, ul#top_menu li a.wishlist_bt_top:before, ul#top_menu li a.cart-menu-btn:before {
-          font-family: 'Glyphter';
+          font-family: 'font-electro';
           font-size: 21px;
           font-size: 1.3125rem;
           color: #fff;
@@ -760,19 +759,19 @@ ul#top_menu {
         text-indent: -9999px;
         overflow: hidden; }
         ul#top_menu li a.wishlist_bt_top:before {
-          content: '\0043'; }
+          content: '\67'; }
       ul#top_menu li a.login {
         text-indent: -9999px;
         overflow: hidden; }
         ul#top_menu li a.login:before {
-          content: '\0042'; }
+          content: '\72'; }
       ul#top_menu li a.cart-menu-btn {
         top: 6px; }
         @media (max-width: 991px) {
           ul#top_menu li a.cart-menu-btn {
             top: 0; } }
         ul#top_menu li a.cart-menu-btn:before {
-          content: '\0041'; }
+          content: '\6e'; }
         ul#top_menu li a.cart-menu-btn strong {
           font-size: 11px;
           font-size: 0.6875rem;
@@ -5792,3 +5791,14 @@ a.social_bt.google {
 @media only screen and (max-width: 1024px) {
   #style-switcher {
     display: none; } }
+
+.add_to_cart_button {
+  width: 35px;
+  height: 35px;
+  background: #efecec;
+  display: inline-block;
+  border-radius: 50%; }
+  .add_to_cart_button.btn-cart:before {
+    content: "\61";
+    font-family: font-electro;
+    padding: .5em .433em; }

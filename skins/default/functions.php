@@ -316,7 +316,8 @@ if (!function_exists('magikCreta_featured_products')) {
                         <!-- /item -->
                     </div>
                     <!-- /row -->
-                    <a href="<?php echo $shop_page_url = get_permalink(woocommerce_get_page_id('shop')); ?>"><strong>View all (<?php echo do_shortcode('[product_count]'); ?>) <i
+                    <a href="<?php echo $shop_page_url = get_permalink(woocommerce_get_page_id('shop')); ?>"><strong>View
+                            all (<?php echo do_shortcode('[product_count]'); ?>) <i
                                     class="arrow_carrot-right"></i></strong></a>
                 </section>
                 <!-- /section -->
@@ -1031,48 +1032,49 @@ if (!function_exists('magikCreta_productitem_template')) {
 
         ?>
 
-            <div class="item ">
-                <div class="box_grid">
-                    <figure>
+        <div class="item ">
+            <div class="box_grid">
+                <figure>
+                    <?php
+                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
+                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
+                        ?>
+                        <a class="wish_bt"
+                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
+                        ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
                         <?php
-                        if (isset($yith_wcwl) && is_object($yith_wcwl)) {
-                            $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
-                            ?>
-                            <a class="wish_bt"
-                               href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                               data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                               data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
-                            ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
-                            <?php
-                        }
-                        ?>
-                        <!--                    <a href="#0" class="wish_bt"></a>-->
-                        <a href="<?php the_permalink(); ?>">
-                            <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
-                                 alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
-                            <!--                        <div class="read_more"><span>Read more</span></div>-->
-                            <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
-                        </a>
-                        <small><?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
-                    </figure>
-                    <div class="wrapper">
-                        <h3><a href="<?php the_permalink(); ?>"
-                               title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
-                                <?php echo htmlspecialchars_decode($post->post_title); ?></a>
-                        </h3>
-                        <?php //the_content();
-                        ?>
-                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                        <span class="price">From <strong>$54</strong> /per person</span>
-                    </div>
-                    <ul>
-                        <li><i class="icon_clock_alt"></i> 1h 30min</li>
-                        <li>
-                            <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-                        </li>
-                    </ul>
+                    }
+                    ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
+                             alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
+                        <!--                        <div class="read_more"><span>Read more</span></div>-->
+
+                    </a>
+                    <small><?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
+                </figure>
+                <div class="wrapper">
+                    <h3><a href="<?php the_permalink(); ?>"
+                           title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
+                            <?php echo htmlspecialchars_decode($post->post_title); ?></a>
+                    </h3>
+                    <?php //the_content();
+                    ?>
+                    <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
+                    <span class="price">From <strong>$54</strong> /per person</span>
                 </div>
+                <ul>
+                    <li><i class="icon_clock_alt"></i> 1h 30min</li>
+                    <li>
+                        <div class="score">
+                            <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </div>
 
         <?php
 
