@@ -5664,8 +5664,8 @@ ul.bullets {
 
 #sign-in-dialog .mfp-close:before {
   font-size: 24px;
-  font-family: 'ElegantIcons';
-  content: "\4d";
+  font-family: 'font-electro';
+  content: "\77";
 }
 
 .small-dialog-header {
@@ -5699,7 +5699,8 @@ ul.bullets {
   @include fontSize(21px);
   position: absolute;
   left: 12px;
-  top: 34px;
+  top: 57%;
+
   color: #ccc;
   width: 25px;
   height: 25px;

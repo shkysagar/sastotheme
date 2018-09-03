@@ -21,9 +21,25 @@ $MagikCreta = new MagikCreta(); ?>
 
         </div>
         <ul id="top_menu">
-            <li><a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
-            <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
-            <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
+            <li>
+                <?php
+                if (class_exists('WooCommerce')) :
+                    $MagikCreta->magikCreta_mini_cart();
+                endif;
+                ?>
+
+                <!--                <a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a>-->
+            </li>
+            <li>
+                <?php if (is_user_logged_in()) { ?>
+                    <a data-toggle="tooltip" data-placement="bottom" title="My Account" href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
+                <?php } else { ?>
+                    <a data-toggle="tooltip" data-placement="bottom" title="Login" href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a>
+                <?php } ?>
+
+            </li>
+            <li><a data-toggle="tooltip" data-placement="bottom"  href="<?php echo get_permalink(get_option('yith_wcwl_wishlist_page_id')); ?>" class="wishlist_bt_top"
+                   title="Your wishlist">Your wishlist</a></li>
         </ul>
         <!-- /top_menu -->
         <a href="#menu" class="btn_mobile">
@@ -43,41 +59,55 @@ $MagikCreta = new MagikCreta(); ?>
         <div class="small-dialog-header">
             <h3>Sign In</h3>
         </div>
-        <form>
+        <?php
+        $redirect_to = '/my-account'
+        ?>
+        <form class="" name="loginform" id="loginform" action="<?php echo site_url('/wp-login.php'); ?>" method="post">
             <div class="sign-in-wrapper">
-                <a href="#0" class="social_bt facebook">Login with Facebook</a>
-                <a href="#0" class="social_bt google">Login with Google</a>
-                <div class="divider"><span>Or</span></div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email" id="email">
-                    <i class="icon_mail_alt"></i>
+                    <input id="user_login" type="text" size="20" value="" name="log" class="form-control">
+                    <!--                    <input type="email" name="email" id="email">-->
+                    <i class="ec ec-user"></i>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="password" id="password" value="">
-                    <i class="icon_lock_alt"></i>
+                    <input type="password" size="20" value="" name="pwd" id="password" class="form-control">
+                    <!--                    <input type="password" class="form-control" name="password" id="password" value="">-->
+                    <i class="ec ec-returning"></i>
                 </div>
                 <div class="clearfix add_bottom_15">
                     <div class="checkboxes float-left">
                         <label class="container_check">Remember me
-                            <input type="checkbox">
+                            <input id="rememberme" type="checkbox" value="forever" name="rememberme">
+                            <!--                            <input type="checkbox">-->
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+                    <div class="float-right mt-1"><a id="forgota" href=" <?php echo wp_lostpassword_url( $redirect ); ?>">Forgot Password?</a></div>
                 </div>
-                <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
                 <div class="text-center">
-                    Don’t have an account? <a href="register.html">Sign up</a>
+                    <!--                    <input type="submit" value="Log In" class="btn_1 full-width">-->
+                    <input id="wp-submit" type="submit" value="Login" name="wp-submit" class="btn_1 full-width">
+                    <input type="hidden" value="<?php echo esc_attr($redirect_to); ?>" name="redirect_to">
+                    <input type="hidden" value="1" name="testcookie">
+                </div>
+                <div class="divider"><span>Or</span></div>
+                <div class="text-center">
+                    Don’t have an account? <a href="<?php echo wp_registration_url(); ?> ">Sign up</a>
                 </div>
                 <div id="forgot_pw">
+                    <a id="back" href="javascript:void(0);">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+
                     <div class="form-group">
                         <label>Please confirm login email below</label>
                         <input type="email" class="form-control" name="email_forgot" id="email_forgot">
-                        <i class="icon_mail_alt"></i>
+                        <i class="ec ec-mail"></i>
                     </div>
-                    <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+                    <p>You will receive an email containing a link allowing you to reset your password to a new
+                        preferred one.</p>
                     <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
                 </div>
             </div>

@@ -290,7 +290,7 @@ msgid "Checkout"
 msgstr ""
 
 #: functions.php:1026 woo_function.php:502
-msgid "View Cart"
+msgid "View Carasdaasdast"
 msgstr ""
 
 #: functions.php:1033 woo_function.php:509

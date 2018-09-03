@@ -1446,3 +1446,4 @@ if (!function_exists('magikCreta_home_customsection')) {
     }
 
 }
+

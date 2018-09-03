@@ -140,8 +140,12 @@
 
 	// Forgot Password
 	$("#forgot").click(function () {
-		$("#forgot_pw").fadeToggle("fast");
-	});
+        $("#forgot_pw").fadeToggle("fast");
+    });
+
+    $("#back").click(function () {
+        $("#forgot_pw").fadeToggle("fast");
+    });
 	
 	// Accordion
     function toggleChevron(e) {
@@ -336,5 +340,12 @@
 	}, function () {
 		$(this).find('.dropdown-menu').stop(true, true).delay(50).fadeOut(300);
 	});
-	
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $('.ajax_add_to_cart').click(function(){
+        $('.added_to_cart').attr('data-toggle', 'tooltip');
+        $('.added_to_cart').attr('data-placement', 'top');
+	});
 })(window.jQuery); 
