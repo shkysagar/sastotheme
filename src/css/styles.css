@@ -5797,8 +5797,28 @@ a.social_bt.google {
   height: 35px;
   background: #efecec;
   display: inline-block;
-  border-radius: 50%; }
+  border-radius: 50%;
+  text-align: center;
+  line-height: 39px;
+  /* color: #fff; */
+  font-size: 20px; }
+  .add_to_cart_button.added {
+    display: none; }
   .add_to_cart_button.btn-cart:before {
     content: "\61";
-    font-family: font-electro;
-    padding: .5em .433em; }
+    font-family: font-electro; }
+
+.wc-forward {
+  width: 35px;
+  height: 35px;
+  background: #efecec;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 39px;
+  /* color: #fff; */
+  font-size: 0px; }
+  .wc-forward:before {
+    content: "\f178";
+    font-family: FontAwesome;
+    font-size: 20px; }

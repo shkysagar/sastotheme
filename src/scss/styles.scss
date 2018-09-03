@@ -6024,11 +6024,39 @@ a.social_bt.google {
   background: #efecec;
   display: inline-block;
   border-radius: 50%;
+  text-align: center;
+  line-height: 39px;
+  /* color: #fff; */
+  font-size: 20px;
+  &.added{
+    display: none;
+  }
   &.btn-cart {
     &:before {
       content: "\61";
       font-family: font-electro;
-      padding: .5em .433em;
+      //padding: .5em .433em;
     }
   }
+}
+
+.wc-forward {
+  width: 35px;
+  height: 35px;
+  background: #efecec;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 39px;
+  /* color: #fff; */
+  font-size: 0px;
+  //text-indent: -9999999px;
+  &:before {
+    content: "\f178";
+    font-family: FontAwesome;
+    //padding: .5em .433em;
+    font-size: 20px;
+
+  }
+
 }
