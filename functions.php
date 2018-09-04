@@ -201,7 +201,7 @@ class MagikCreta
         //theme js
 
 
-        wp_enqueue_script('jquery.min-js', MAGIKCRETA_THEME_URI . '/src/js/jquery-2.2.4.min.js', array('jquery'), '', true);
+//        wp_enqueue_script('jquery.min-js', MAGIKCRETA_THEME_URI . '/src/js/jquery-2.2.4.min.js', array('jquery'), '', true);
         wp_enqueue_script('common_scripts-js', MAGIKCRETA_THEME_URI . '/src/js/common_scripts.js', array('jquery'), '', true);
         wp_enqueue_script('jquery.cookie.min', MAGIKCRETA_THEME_URI . '/js/jquery.cookie.min.js', array('jquery'), '', true);
 

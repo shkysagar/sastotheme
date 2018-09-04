@@ -25,43 +25,7 @@
 		additionalMarginTop: 150
 	});
 	
-	// Mobile Mmenu
-	var $menu = $("nav#menu").mmenu({
-		"extensions": ["pagedim-black"],
-		counters: true,
-		keyboardNavigation: {
-			enable: true,
-			enhance: true
-		},
-		navbar: {
-			title: 'MENU'
-		},
-		navbars: [{position:'bottom',content: ['<a href="#0">© 2018 Panagea</a>']}]}, 
-		{
-		// configuration
-		clone: true,
-		classNames: {
-			fixedElements: {
-				fixed: "menu_fixed",
-				sticky: "sticky"
-			}
-		}
-	});
-	var $icon = $("#hamburger");
-	var API = $menu.data("mmenu");
-	$icon.on("click", function () {
-		API.open();
-	});
-	API.bind("open:finish", function () {
-		setTimeout(function () {
-			$icon.addClass("is-active");
-		}, 100);
-	});
-	API.bind("close:finish", function () {
-		setTimeout(function () {
-			$icon.removeClass("is-active");
-		}, 100);
-	});
+
 	
 	// WoW - animation on scroll
 	var wow = new WOW(
@@ -118,7 +82,7 @@
 	});
 	
 	// Modal Sign In
-	$('#sign-in').magnificPopup({
+	/*$('#sign-in').magnificPopup({
 		type: 'inline',
 		fixedContentPos: true,
 		fixedBgPos: true,
@@ -129,7 +93,7 @@
 		removalDelay: 300,
 		closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>',
 		mainClass: 'my-mfp-zoom-in'
-	});
+	});*/
 	
 	// Show Password
 	$('#password').hidePassword('focus', {
@@ -340,12 +304,14 @@
 	}, function () {
 		$(this).find('.dropdown-menu').stop(true, true).delay(50).fadeOut(300);
 	});
+	// tooltip
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
 
-    $('.ajax_add_to_cart').click(function(){
-        $('.added_to_cart').attr('data-toggle', 'tooltip');
-        $('.added_to_cart').attr('data-placement', 'top');
+
+    $('a.ajax_add_to_cart').click(function(){
+        $('a.added_to_cart').attr('data-toggle', 'tooltip');
+        $('a.added_to_cart').attr('data-placement', 'top');
 	});
 })(window.jQuery); 

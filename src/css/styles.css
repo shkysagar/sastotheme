@@ -387,8 +387,7 @@ ul, ol {
   padding: 0; }
 
 #page {
-  position: relative;
-  left: 0; }
+  position: relative; }
 
 .main_title {
   text-align: center;
@@ -679,6 +678,7 @@ header.site-head {
   top: 0;
   width: 100%;
   padding: 20px 30px;
+  z-index: 11;
   border-bottom: 1px solid rgba(255, 255, 255, 0); }
   @media (max-width: 767px) {
     header.site-head {

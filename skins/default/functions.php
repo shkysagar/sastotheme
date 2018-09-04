@@ -218,7 +218,7 @@ if (!function_exists('magikCreta_recentitem_template')) {
             $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
 
         ?>
-        <div class="item col-md-4 col-lg-3 col-xl-3">
+        <div class="item col-md-4 col-lg-3 col-xl-4">
             <div class="box_grid">
                 <figure>
 

@@ -31,38 +31,6 @@ switch ((int)$design) {
 }
 
 ?>
-<?php if (isset($creta_Options['theme_layout']) && $creta_Options['theme_layout'] == 'version2') {
-    ?>
-    <div class="page-heading">
-        <div class="container">
-            <?php if ($magikCreta_breadcrumb_status == 1) { ?>
-                <div class="breadcrumbs">
-                    <?php $MagikCreta->magikCreta_breadcrumbs(); ?>
-                </div>
-            <?php } ?>
-            <div class="page-title">
-                <h1 class="entry-title">
-                    <?php $MagikCreta->magikCreta_page_title(); ?>
-                </h1>
-            </div>
-        </div>
-    </div>
-<?php } else { ?>
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row">
-
-                <?php if ($magikCreta_breadcrumb_status == 1) { ?>
-
-                    <div class="col-xs-12">
-                        <?php $MagikCreta->magikCreta_breadcrumbs(); ?>
-                    </div>
-
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-<?php } ?>
 
 
 <div class="main-container <?php echo esc_html($main) ?> wow bounceInUp">
@@ -84,7 +52,7 @@ switch ((int)$design) {
                             ?>
                             <div class="page-title">
                                 <h2 class="entry-title">
-                                    <?php $MagikCreta->magikCreta_page_title(); ?>
+                                    <?php //$MagikCreta->magikCreta_page_title(); ?>
                                 </h2>
                             </div>
                             <?php
