@@ -4429,3 +4429,96 @@ html.mm-opening .mm-menu.mm-offcanvas.mm-front, html.mm-opening .mm-menu.mm-offc
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0)
 }
+
+/*  17.  Global Messages   */
+#notification{
+    position: fixed;
+    top: 87px;
+    right: 20px;
+    z-index: 9999999;
+
+}
+.success, .warning, .attention, .information {
+    padding: 21px 40px 21px 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    /*	max-width: 350px;*/
+    border-radius: 0px;
+}
+#notification .success {
+    max-width: 350px;
+}
+.success {
+    background: #FFFFFF url(../../images/success.png) 25px center no-repeat;
+}
+.warning {
+    background: #FFFFFF url(../../images/warning.png) 25px center no-repeat;
+}
+.attention {
+    background: #FFFFFF url(../../images/attention.png) 25px center no-repeat;
+}
+.success .close, .warning .close, .attention .close, .information .close {
+    float: right;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    padding-top: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+    opacity: 9;
+}
+.success {
+    color: #3d6611;
+    font-weight: bold;
+}
+.error {
+    color: #df280a;
+    font-weight: bold;
+}
+.notice {
+    color: #000000;
+}
+.messages, .messages ul {
+    list-style: none !important;
+    /*margin: 0 !important;*/
+    padding: 0 !important;
+}
+.messages {
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+}
+.messages li {
+    margin: 5px 0 10px !important;
+}
+.messages li li {
+    margin: 0 0 3px !important;
+}
+.error-msg, .success-msg, .note-msg, .notice-msg {
+    border-style: solid !important;
+    border-width: 0px !important;
+    border-radius: 0px;
+    background-position: 10px 9px !important;
+    background-repeat: no-repeat !important; /*min-height:20px !important;*/
+    padding: 8px 8px 8px 8px !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    text-align: center;
+}
+.error-msg {
+    border-color: #f16048;
+    background-color: #faebe7;
+    color: #df280a;
+}
+.success-msg {
+    border-color: #446423;
+    background-color: #eff5ea;
+    color: #3d6611;
+}
+.note-msg, .notice-msg {
+    border-color: #fcd344;
+    background-color: #fafaec;
+    color: #3d6611;
+}

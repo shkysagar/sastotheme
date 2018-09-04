@@ -411,6 +411,11 @@ ul, ol {
   padding: 0;
 }
 
+#page {
+  position: relative;
+  left: 0;
+}
+
 .main_title {
   text-align: center;
   margin-bottom: 45px;
@@ -2849,17 +2854,21 @@ a.box_feat {
     overflow: hidden;
     position: relative;
     height: 210px;
-    small {
+    small{
       position: absolute;
-      @include rgba(bg, #000, 0.6);
       left: 20px;
       top: 22px;
-      text-transform: uppercase;
-      color: #ccc;
-      font-weight: 600;
-      @include border-radius(3px);
-      padding: 7px 10px 4px 10px;
-      line-height: 1;
+      a{
+        text-transform: uppercase;
+        color: #ccc;
+        @include rgba(bg, #000, 0.6);
+        font-weight: 600;
+        @include border-radius(3px);
+        padding: 7px 10px 4px 10px;
+        line-height: 1;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
     }
     .read_more {
       position: absolute;

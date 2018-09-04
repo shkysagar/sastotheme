@@ -1035,32 +1035,39 @@ if (!function_exists('magikCreta_productitem_template')) {
         <div class="item ">
             <div class="box_grid">
                 <figure>
+
                     <?php
                     if (isset($yith_wcwl) && is_object($yith_wcwl)) {
-                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="add_to_wishlist link-wishlist"' : 'class="add_to_wishlist link-wishlist"';
+                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="wish_bt add_to_wishlist link-wishlist"' : 'class="wish_bt add_to_wishlist link-wishlist"';
                         ?>
-                        <a class="wish_bt"
-                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                           data-product-type="<?php echo esc_html($product->get_type()); ?>" <?php echo htmlspecialchars_decode($classes); ?>
-                        ><?php //esc_attr_e('Add to Wishlist', 'creta'); ?></a>
+                        <a  data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
+                            href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                            data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                           data-product-type="<?php echo esc_html($product->get_type()); ?>"
+                            <?php echo htmlspecialchars_decode($classes); ?>
+                        ></a>
                         <?php
                     }
                     ?>
+
+
                     <a href="<?php the_permalink(); ?>">
                         <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
                              alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
                         <!--                        <div class="read_more"><span>Read more</span></div>-->
 
                     </a>
-                    <small><?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
+                    <small>
+                        <?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
                 </figure>
                 <div class="wrapper">
-                    <h3><a href="<?php the_permalink(); ?>"
+                    <h3>
+                        <a href="<?php the_permalink(); ?>"
                            title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
-                            <?php echo htmlspecialchars_decode($post->post_title); ?></a>
+                            <?php echo htmlspecialchars_decode($post->post_title); ?>
+                        </a>
                     </h3>
-                    <?php //the_content();
+                    <?php the_content();
                     ?>
                     <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
                     <span class="price">From <strong>$54</strong> /per person</span>

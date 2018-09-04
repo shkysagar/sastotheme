@@ -205,6 +205,7 @@ class MagikCreta
         wp_enqueue_script('common_scripts-js', MAGIKCRETA_THEME_URI . '/src/js/common_scripts.js', array('jquery'), '', true);
         wp_enqueue_script('jquery.cookie.min', MAGIKCRETA_THEME_URI . '/js/jquery.cookie.min.js', array('jquery'), '', true);
 
+        wp_enqueue_script('cart',MAGIKCRETA_THEME_URI . '/src/js/common.js', array('jquery'), '', true);
         wp_enqueue_script('main-js', MAGIKCRETA_THEME_URI . '/src/js/main.js', array('jquery'), '', true);
 
         wp_localize_script('themejs', 'js_creta_vars', array(
