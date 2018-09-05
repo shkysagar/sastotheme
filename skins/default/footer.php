@@ -3,7 +3,7 @@
 $MagikCreta = new MagikCreta(); ?>
 <?php //magikCreta_footer_brand_logo(); ?>
 <?php //magikCreta_header_service(); ?>
-<footer>
+<footer class="d-none">
     <!-- BEGIN INFORMATIVE FOOTER -->
     <div class="footer-inner">
         <div class="container">
