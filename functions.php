@@ -215,7 +215,7 @@ class MagikCreta
         ));
 
     }
-    
+
 
 
     function magikCreta_apple_touch_icon()
