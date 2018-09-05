@@ -30,18 +30,22 @@ $MagikCreta = new MagikCreta(); ?>
                 ?>
 
                 <!--                <a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a>-->
-            </li>
+            </li><li><a data-toggle="tooltip" data-placement="bottom"  href="<?php echo get_permalink(get_option('yith_wcwl_wishlist_page_id')); ?>" class="wishlist_bt_top"
+                   title="Your wishlist">Your wishlist</a></li>
+
             <li>
-                <?php if (is_user_logged_in()) { ?>
-                    <a data-toggle="tooltip" data-placement="bottom" title="My Account" href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
+                <?php if (is_user_logged_in()) {
+                    global $current_user; ?>
+                    <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="logout" >
+                        <?php echo '' . esc_attr($current_user->display_name) . '';?>
+                    </a>
                 <?php } else { ?>
                     <a data-toggle="tooltip" data-placement="bottom" title="Login" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" id="sign-in" class="login" title="Sign In">
                         Sign In</a>
                 <?php } ?>
 
             </li>
-            <li><a data-toggle="tooltip" data-placement="bottom"  href="<?php echo get_permalink(get_option('yith_wcwl_wishlist_page_id')); ?>" class="wishlist_bt_top"
-                   title="Your wishlist">Your wishlist</a></li>
+
         </ul>
         <!-- /top_menu -->
         <a href="#menu" class="btn_mobile">

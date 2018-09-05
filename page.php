@@ -33,7 +33,7 @@ switch ((int)$design) {
 ?>
 
 
-<div class="main-container <?php echo esc_html($main) ?> wow bounceInUp">
+<div class="main-container  wow bounceInUp <?php echo esc_html($main) ?>">
     <div class="main container">
         <div class="row">
             <?php if (empty($leftbar) && $leftbar != 'hidesidebar') { ?>
@@ -45,7 +45,7 @@ switch ((int)$design) {
                 <div class="col-main">
 
                     <div class="static-contain">
-                        <?php if (isset($creta_Options['theme_layout']) && $creta_Options['theme_layout'] == 'version2') {
+                        <?php if (isset($creta_Options['theme_layout']) ) {
                             ?>
 
                         <?php } else {

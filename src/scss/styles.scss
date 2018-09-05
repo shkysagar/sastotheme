@@ -741,7 +741,11 @@ ul#top_menu {
       }
     }
     a {
+      height: 23px;
+      position: relative;
+      top: 10px;
       color: #fff;
+      line-height: 20px;
       &:hover {
         color: #fff;
         opacity: 0.7;
@@ -751,9 +755,6 @@ ul#top_menu {
       &.cart-menu-btn {
         display: block;
         width: 22px;
-        height: 23px;
-        position: relative;
-        top: 8px;
         @include tablet {
           top: 2px;
         }
@@ -766,6 +767,25 @@ ul#top_menu {
           position: absolute;
           left: 0;
           top: 0;
+          font-weight: normal;
+          line-height: $line-height-none;
+          .sticky & {
+            color: #444;
+          }
+        }
+      }
+      &.logout{
+        display: block;
+        padding-left: 30px;
+        &:before {
+          font-family: 'font-electro';
+          @include fontSize(21px);
+          color: #fff;
+          text-indent: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: '\72';
           font-weight: normal;
           line-height: $line-height-none;
           .sticky & {
@@ -787,8 +807,9 @@ ul#top_menu {
           content: '\72';
         }
       }
+
       &.cart-menu-btn {
-        top: 6px;
+        //top: 6px;
         @include tablet {
           top: 0;
         }
@@ -6068,4 +6089,12 @@ a.social_bt.google {
 
   }
 
+}
+.woocommerce-page {
+  header.site-head{
+    background: #121921;
+  }
+}
+.main-container{
+  padding-top: 110px;
 }
