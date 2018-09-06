@@ -3809,7 +3809,7 @@ ul.hotel_facilities {
       font-size: 1.3125rem;
       position: absolute;
       left: 12px;
-      top: 34px;
+      top: 40px;
       color: #ccc;
       width: 25px;
       height: 25px;
@@ -3841,7 +3841,7 @@ ul.hotel_facilities {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding: 10px;
+    padding: 0 10px;
     font-style: italic; }
 
 a.social_bt {
@@ -5611,7 +5611,7 @@ a#forgot {
   top: 0;
   width: 100%;
   z-index: 99;
-  min-height: 460px;
+  min-height: 100%;
   display: none; }
   #forgot_pw label {
     font-weight: 500; }
@@ -5672,7 +5672,7 @@ a.social_bt.google {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding: 10px;
+    padding: 0 10px;
     font-style: italic; }
 
 /* Magnific popup */
@@ -5862,10 +5862,15 @@ a.social_bt.google {
     font-family: FontAwesome;
     font-size: 20px; }
 
+.woocommerce-page header {
+  display: none; }
+
 .woocommerce-page .main-menu > ul > li span > a,
 .woocommerce-page ul#top_menu li a,
 .woocommerce-page ul#top_menu li a:before {
   color: #444; }
 
-.main-container {
-  padding-top: 110px; }
+.social-networks .apsl-icon-block {
+  display: block;
+  width: 100%;
+  text-align: center; }

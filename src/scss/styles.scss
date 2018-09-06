@@ -3832,7 +3832,7 @@ ul.hotel_facilities {
           @include fontSize(21px);
           position: absolute;
           left: 12px;
-          top: 34px;
+          top: 40px;
           color: #ccc;
           width: 25px;
           height: 25px;
@@ -3871,7 +3871,7 @@ ul.hotel_facilities {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding: 10px;
+    padding:0 10px ;
     font-style: italic;
   }
 }
@@ -5787,7 +5787,7 @@ a#forgot {
   top: 0;
   width: 100%;
   z-index: 99;
-  min-height: 460px;
+  min-height: 100%;
   display: none;
   label {
     font-weight: 500;
@@ -5857,7 +5857,7 @@ a.social_bt.google {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding: 10px;
+    padding:0 10px;
     font-style: italic;
   }
 }
@@ -6093,7 +6093,7 @@ a.social_bt.google {
 }
 .woocommerce-page {
   header{
-    //display: none;
+    display: none;
   }
   .main-menu > ul > li span > a,
   ul#top_menu li a,
@@ -6102,5 +6102,14 @@ a.social_bt.google {
   }
 }
 .main-container{
-  padding-top: 110px;
+  //padding-top: 110px;
+}
+
+//social login
+.social-networks{
+  .apsl-icon-block{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
