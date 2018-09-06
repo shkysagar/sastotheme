@@ -34,6 +34,22 @@
 /*============================================================================================*/
 /* 1.  SITE STRUCTURE and TYPOGRAPHY */
 /*============================================================================================*/
+.user-dashboard {
+  position: relative;
+  /*&:before{
+    content: '';
+    height: 150px;
+    background: purple;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }*/ }
+
+.is-active {
+  color: #fff;
+  background-color: #007bff; }
+
 /*Google web font family*/
 @media (min-width: 1200px) {
   .container-fluid {
@@ -5846,8 +5862,10 @@ a.social_bt.google {
     font-family: FontAwesome;
     font-size: 20px; }
 
-.woocommerce-page header.site-head {
-  background: #121921; }
+.woocommerce-page .main-menu > ul > li span > a,
+.woocommerce-page ul#top_menu li a,
+.woocommerce-page ul#top_menu li a:before {
+  color: #444; }
 
 .main-container {
   padding-top: 110px; }

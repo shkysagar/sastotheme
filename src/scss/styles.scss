@@ -36,6 +36,7 @@
 /*============================================================================================*/
 @import 'variables';
 @import 'mixin';
+@import 'user-dashboard';
 
 /*Google web font family*/
 //@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,800");
@@ -6091,8 +6092,13 @@ a.social_bt.google {
 
 }
 .woocommerce-page {
-  header.site-head{
-    background: #121921;
+  header{
+    //display: none;
+  }
+  .main-menu > ul > li span > a,
+  ul#top_menu li a,
+  ul#top_menu li a:before{
+    color: #444;
   }
 }
 .main-container{
