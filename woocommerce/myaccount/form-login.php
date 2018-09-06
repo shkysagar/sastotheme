@@ -28,9 +28,21 @@ if (!defined('ABSPATH')) {
 <div id="login">
     <aside>
         <figure>
-            <a href="<?php echo esc_url(get_home_url()); ?>">
-                <img src="<?php echo esc_url($logoUrl); ?>" height="36" data-retina="true" alt="<?php bloginfo('name'); ?>" class="logo_sticky">
-            </a>
+            <?php if (isset($creta_Options['header_logo']['url']) && !empty($creta_Options['header_logo']['url'])) {
+                $logoUrl = $creta_Options['header_logo']['url']; ?>
+                <a href="<?php echo esc_url(get_home_url()); ?>">
+                    <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
+                         alt="<?php bloginfo('name'); ?>" class="logo_normal">
+                    <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
+                         alt="<?php bloginfo('name'); ?>" class="logo_sticky">
+                </a>
+                <?php
+            } else { ?>
+                <a class="logo" title="<?php bloginfo('name'); ?>" href="<?php echo esc_url(get_home_url()); ?> ">
+                    <img src="<?php echo esc_url($logoUrl); ?>" alt="<?php bloginfo('name'); ?>"> </a>
+                <?php
+
+            } ?>
         </figure>
 
 
@@ -71,7 +83,7 @@ if (!defined('ABSPATH')) {
                 <div class="divider"><span>Or</span></div>
                 <?php do_action('woocommerce_login_form'); ?>
                 <div class="text-center">
-                    Don’t have an account? <a id="forgot"  href="javascript:void(0);">Sign up</a>
+                    Don’t have an account? <a id="forgot" href="javascript:void(0);">Sign up</a>
                 </div>
             </form>
             <?php if (get_option('woocommerce_enable_myaccount_registration') === 'yes') : ?>
@@ -110,7 +122,6 @@ if (!defined('ABSPATH')) {
                     <?php endif; ?>
 
 
-
                     <p class="woocommerce-FormRow form-row">
                         <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
                         <button type="submit" class="btn_1 full-width" name="register"
@@ -118,7 +129,6 @@ if (!defined('ABSPATH')) {
                     </p>
 
                     <?php do_action('woocommerce_register_form_end'); ?>
-
 
 
                 </div>
