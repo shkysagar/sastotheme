@@ -50,7 +50,7 @@ if (!defined('ABSPATH')) {
             <form method="post">
                 <?php do_action('woocommerce_login_form_start'); ?>
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>Username or email address *</label>
                     <input type="text" class="form-control" name="username" id="username" autocomplete="username"
                            value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
                     <i class="ec ec-user"></i>
