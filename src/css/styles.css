@@ -5862,11 +5862,6 @@ a.social_bt.google {
     font-family: FontAwesome;
     font-size: 20px; }
 
-.woocommerce-page .main-menu > ul > li span > a,
-.woocommerce-page ul#top_menu li a,
-.woocommerce-page ul#top_menu li a:before {
-  color: #444; }
-
 .social-networks .apsl-icon-block {
   display: block;
   width: 100%;
