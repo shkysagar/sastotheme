@@ -5862,6 +5862,10 @@ a.social_bt.google {
     font-family: FontAwesome;
     font-size: 20px; }
 
+.woocommerce-page p.form-row label {
+  display: inline-block;
+  width: 100%; }
+
 .social-networks .apsl-icon-block {
   display: block;
   width: 100%;

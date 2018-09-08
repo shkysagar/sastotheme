@@ -775,7 +775,7 @@ ul#top_menu {
           }
         }
       }
-      &.logout{
+      &.logout {
         display: block;
         padding-left: 30px;
         &:before {
@@ -2875,11 +2875,11 @@ a.box_feat {
     overflow: hidden;
     position: relative;
     height: 210px;
-    small{
+    small {
       position: absolute;
       left: 20px;
       top: 22px;
-      a{
+      a {
         text-transform: uppercase;
         color: #ccc;
         @include rgba(bg, #000, 0.6);
@@ -3871,7 +3871,7 @@ ul.hotel_facilities {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding:0 10px ;
+    padding: 0 10px;
     font-style: italic;
   }
 }
@@ -5857,7 +5857,7 @@ a.social_bt.google {
     top: -20px;
     background-color: #fff;
     display: inline-block;
-    padding:0 10px;
+    padding: 0 10px;
     font-style: italic;
   }
 }
@@ -6059,7 +6059,7 @@ a.social_bt.google {
   line-height: 39px;
   /* color: #fff; */
   font-size: 20px;
-  &.added{
+  &.added {
     display: none;
   }
   &.btn-cart {
@@ -6091,23 +6091,31 @@ a.social_bt.google {
   }
 
 }
+
 .woocommerce-page {
-  header{
+  header {
     //display: none;
   }
   .main-menu > ul > li span > a,
   ul#top_menu li a,
-  ul#top_menu li a:before{
+  ul#top_menu li a:before {
     //color: #444;
   }
+  p.form-row {
+    label {
+      display: inline-block;
+      width: 100%;
+    }
+  }
 }
-.main-container{
+
+.main-container {
   //padding-top: 110px;
 }
 
 //social login
-.social-networks{
-  .apsl-icon-block{
+.social-networks {
+  .apsl-icon-block {
     display: block;
     width: 100%;
     text-align: center;
