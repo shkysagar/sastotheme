@@ -3760,70 +3760,43 @@ ul.hotel_facilities {
       margin-top: 25px; } }
 
 /*-------- 2.5 Login/register --------*/
-#login_bg, #register_bg {
-  background: url(../img/hero_in_bg_3.jpg) center center no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100vh;
-  width: 100%; }
-
-#register_bg {
-  background: url(../img/hero_in_bg_2.jpg) center center no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-#login figure, #register figure {
-  text-align: center;
-  border-bottom: 1px solid #ededed;
-  margin: -45px -60px 25px -60px;
-  padding: 20px 60px 25px 60px; }
-  @media (max-width: 767px) {
-    #login figure, #register figure {
-      margin: -30px -30px 20px -30px;
-      padding: 15px 60px 20px 60px; } }
-
-#login aside, #register aside {
-  width: 430px;
-  padding: 45px 60px 60px 60px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow-y: auto;
-  background-color: #fff;
-  min-height: 100vh; }
-  @media (max-width: 767px) {
-    #login aside, #register aside {
-      width: 100%;
-      padding: 30px; } }
-  #login aside form, #register aside form {
-    margin-bottom: 60px;
-    display: block; }
-    #login aside form .form-group input, #register aside form .form-group input {
-      padding-left: 40px; }
-    #login aside form .form-group i, #register aside form .form-group i {
-      font-size: 21px;
-      font-size: 1.3125rem;
+#login, #register {
+  position: relative;
+  height: 100vh; }
+  #login aside, #register aside {
+    min-height: 1px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute; }
+    @media (max-width: 767px) {
+      #login aside, #register aside {
+        width: 100%;
+        padding: 30px; } }
+    #login aside form, #register aside form {
+      padding: 45px 60px 60px 60px;
+      display: block; }
+      #login aside form .form-group input, #register aside form .form-group input {
+        padding-left: 40px; }
+      #login aside form .form-group i, #register aside form .form-group i {
+        font-size: 21px;
+        font-size: 1.3125rem;
+        position: absolute;
+        left: 12px;
+        top: 40px;
+        color: #ccc;
+        width: 25px;
+        height: 25px;
+        display: block;
+        font-weight: 400 !important; }
+    #login aside .copy, #register aside .copy {
+      text-align: center;
       position: absolute;
-      left: 12px;
-      top: 40px;
-      color: #ccc;
-      width: 25px;
-      height: 25px;
-      display: block;
-      font-weight: 400 !important; }
-  #login aside .copy, #register aside .copy {
-    text-align: center;
-    position: absolute;
-    height: 30px;
-    left: 0;
-    bottom: 30px;
-    width: 100%;
-    color: #999;
-    font-weight: 500; }
+      height: 30px;
+      left: 0;
+      bottom: 30px;
+      width: 100%;
+      color: #999;
+      font-weight: 500; }
 
 .access_social {
   margin-top: 45px; }
@@ -3887,6 +3860,25 @@ a.social_bt {
     background-color: #0077B5; }
     a.social_bt.linkedin:before {
       content: "\e09d"; }
+
+.user-login {
+  background: #fff; }
+
+.woocommerce {
+  height: 100vh;
+  padding-top: 110px; }
+  .woocommerce .register {
+    border: none !important;
+    margin: 0 !important; }
+
+.woocommerce-page p.form-row label {
+  display: inline-block;
+  width: 100%; }
+
+.social-networks .apsl-icon-block {
+  display: block;
+  width: 100%;
+  text-align: center; }
 
 /*Password strength */
 #pass-info {
@@ -5861,12 +5853,3 @@ a.social_bt.google {
     content: "\f178";
     font-family: FontAwesome;
     font-size: 20px; }
-
-.woocommerce-page p.form-row label {
-  display: inline-block;
-  width: 100%; }
-
-.social-networks .apsl-icon-block {
-  display: block;
-  width: 100%;
-  text-align: center; }

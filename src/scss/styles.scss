@@ -3785,44 +3785,28 @@ ul.hotel_facilities {
 }
 
 /*-------- 2.5 Login/register --------*/
-#login_bg, #register_bg {
-  background: url(../img/hero_in_bg_3.jpg) center center no-repeat fixed;
-  @include background-size(cover);
-  min-height: 100vh;
-  width: 100%;
-}
-
-#register_bg {
-  background: url(../img/hero_in_bg_2.jpg) center center no-repeat fixed;
-  @include background-size(cover);
-}
 
 #login, #register {
-  figure {
-    text-align: center;
-    border-bottom: 1px solid $border-color-2;
-    margin: -45px -60px 25px -60px;
-    padding: 20px 60px 25px 60px;
-    @include mobile {
-      margin: -30px -30px 20px -30px;
-      padding: 15px 60px 20px 60px;
-    }
-  }
+  position: relative;
+  height: 100vh;
   aside {
-    width: 430px;
-    padding: 45px 60px 60px 60px;
+    //width: 430px;
+    min-height: 1px;
+    //top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0%);
     position: absolute;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
-    background-color: #fff;
-    min-height: 100vh;
+    //overflow-y: auto;
+    //background-color: #fff;
+    //min-height: 100vh;
+    //border: 1px red solid;
     @include mobile {
       width: 100%;
       padding: 30px;
     }
     form {
-      margin-bottom: 60px;
+      padding: 45px 60px 60px 60px;
+
       display: block;
       .form-group {
         input {
@@ -3922,6 +3906,51 @@ a.social_bt {
     &:before {
       content: "\e09d";
     }
+  }
+}
+
+
+
+.user-login{
+  background: #fff;
+}
+.woocommerce{
+  //background: red;
+  height: 100vh;
+  padding-top: 110px;
+  .register{
+    border: none !important;
+    //padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+.woocommerce-page {
+  header {
+    //display: none;
+  }
+  .main-menu > ul > li span > a,
+  ul#top_menu li a,
+  ul#top_menu li a:before {
+    //color: #444;
+  }
+  p.form-row {
+    label {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.main-container {
+  //padding-top: 110px;
+}
+
+//social login
+.social-networks {
+  .apsl-icon-block {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -6090,34 +6119,4 @@ a.social_bt.google {
 
   }
 
-}
-
-.woocommerce-page {
-  header {
-    //display: none;
-  }
-  .main-menu > ul > li span > a,
-  ul#top_menu li a,
-  ul#top_menu li a:before {
-    //color: #444;
-  }
-  p.form-row {
-    label {
-      display: inline-block;
-      width: 100%;
-    }
-  }
-}
-
-.main-container {
-  //padding-top: 110px;
-}
-
-//social login
-.social-networks {
-  .apsl-icon-block {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
 }
