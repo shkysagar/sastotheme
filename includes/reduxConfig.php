@@ -888,6 +888,14 @@ Redux::setSection($opt_name, array(
             'subtitle' => esc_html__('Upload your logo here and enter the height of it below', 'creta'),
         ),
         array(
+            'id' => 'header_logo_light',
+            'type' => 'media',
+            'required' => array('header_use_imagelogo', '=', '1'),
+            'title' => esc_html__('Light Logo Upload', 'creta'),
+            'desc' => esc_html__('', 'creta'),
+            'subtitle' => esc_html__('Upload your logo here and enter the height of it below', 'creta'),
+        ),
+        array(
             'id' => 'header_logo_height',
             'type' => 'text',
             'required' => array('header_use_imagelogo', '=', '1'),

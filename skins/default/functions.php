@@ -91,11 +91,12 @@ if (!function_exists('magikCreta_logo_image')) {
                 <?php bloginfo('name'); ?>
             </a>
             <?php
-        } else if (isset($creta_Options['header_logo']['url']) && !empty($creta_Options['header_logo']['url'])) {
+        } else if (isset($creta_Options['header_logo']['url']) && ($creta_Options['header_logo_light']['url']) && !empty($creta_Options['header_logo']['url'])  && !empty($creta_Options['header_logo_light']['url'])) {
             $logoUrl = $creta_Options['header_logo']['url'];
+            $lightlogoUrl = $creta_Options['header_logo_light']['url'];
             ?>
             <a href="<?php echo esc_url(get_home_url()); ?>">
-                <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
+                <img src="<?php echo esc_url($lightlogoUrl); ?>" data-retina="true"
                      alt="<?php bloginfo('name'); ?>" class="logo_normal">
                 <img src="<?php echo esc_url($logoUrl); ?>" data-retina="true"
                      alt="<?php bloginfo('name'); ?>" class="logo_sticky">

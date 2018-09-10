@@ -1,5 +1,5 @@
 /*
-[Table of contents] 
+[Table of contents]
 
 1. SITE STRUCTURE and TYPOGRAPHY
 - 1.1 Typography
@@ -14,7 +14,7 @@
 - 2.5 Login/register
 - 2.6 Map styles
 - 2.7 Contacts
-- 2.8 404 page 
+- 2.8 404 page
 - 2.9 Cart section
 - 2.10 Media Gallery
 - 2.11 Faq
@@ -698,7 +698,8 @@ header.site-head {
   border-bottom: 1px solid rgba(255, 255, 255, 0); }
   @media (max-width: 767px) {
     header.site-head {
-      padding: 15px 15px 5px 15px; } }
+      padding: 15px;
+      background: gray; } }
   header.site-head.header .logo_sticky {
     display: none; }
   header.site-head.header.sticky {
@@ -3764,17 +3765,23 @@ ul.hotel_facilities {
   position: relative;
   height: 100vh; }
   #login aside, #register aside {
-    min-height: 1px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    position: absolute; }
+    min-height: 1px; }
     @media (max-width: 767px) {
       #login aside, #register aside {
         width: 100%;
-        padding: 30px; } }
+        padding: 15px; } }
+    #login aside .user-login,
+    #login aside .user-register, #register aside .user-login,
+    #register aside .user-register {
+      left: 50%;
+      transform: translate(-50%, 0%);
+      position: absolute; }
     #login aside form, #register aside form {
       padding: 45px 60px 60px 60px;
       display: block; }
+      @media (max-width: 575px) {
+        #login aside form, #register aside form {
+          padding: 20px; } }
       #login aside form .form-group input, #register aside form .form-group input {
         padding-left: 40px; }
       #login aside form .form-group i, #register aside form .form-group i {
@@ -5611,6 +5618,11 @@ a#forgot {
 .sign-in-wrapper {
   position: relative;
   height: 100%; }
+  .sign-in-wrapper #forgot_pw {
+    width: 800px; }
+    @media (max-width: 575px) {
+      .sign-in-wrapper #forgot_pw {
+        width: auto; } }
 
 a.social_bt {
   -webkit-border-radius: 3px;

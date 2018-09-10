@@ -1,5 +1,5 @@
 /*
-[Table of contents] 
+[Table of contents]
 
 1. SITE STRUCTURE and TYPOGRAPHY
 - 1.1 Typography
@@ -14,7 +14,7 @@
 - 2.5 Login/register
 - 2.6 Map styles
 - 2.7 Contacts
-- 2.8 404 page 
+- 2.8 404 page
 - 2.9 Cart section
 - 2.10 Media Gallery
 - 2.11 Faq
@@ -690,7 +690,8 @@ header.site-head {
   z-index: 11;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   @include mobile {
-    padding: 15px 15px 5px 15px;
+    padding: 15px;
+    background: gray;
   }
   &.header {
     .logo_sticky {
@@ -3793,20 +3794,26 @@ ul.hotel_facilities {
     //width: 430px;
     min-height: 1px;
     //top: 10%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    position: absolute;
+
     //overflow-y: auto;
     //background-color: #fff;
     //min-height: 100vh;
     //border: 1px red solid;
     @include mobile {
       width: 100%;
-      padding: 30px;
+      padding: 15px;
+    }
+    .user-login,
+    .user-register{
+      left: 50%;
+      transform: translate(-50%, 0%);
+      position: absolute;
     }
     form {
       padding: 45px 60px 60px 60px;
-
+      @include extra-small-mobile {
+        padding: 20px;
+      }
       display: block;
       .form-group {
         input {
@@ -5826,6 +5833,12 @@ a#forgot {
 .sign-in-wrapper {
   position: relative;
   height: 100%;
+  #forgot_pw{
+    width: 800px;
+    @include extra-small-mobile {
+      width: auto;
+    }
+  }
 }
 
 a.social_bt {
