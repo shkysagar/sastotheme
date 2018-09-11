@@ -313,9 +313,4 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 
-
-    $('a.ajax_add_to_cart').click(function(){
-        $('a.added_to_cart').attr('data-toggle', 'tooltip');
-        $('a.added_to_cart').attr('data-placement', 'top');
-	});
 })(window.jQuery); 

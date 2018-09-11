@@ -91,7 +91,7 @@ if (!function_exists('magikCreta_logo_image')) {
                 <?php bloginfo('name'); ?>
             </a>
             <?php
-        } else if (isset($creta_Options['header_logo']['url']) && ($creta_Options['header_logo_light']['url']) && !empty($creta_Options['header_logo']['url'])  && !empty($creta_Options['header_logo_light']['url'])) {
+        } else if (isset($creta_Options['header_logo']['url']) && ($creta_Options['header_logo_light']['url']) && !empty($creta_Options['header_logo']['url']) && !empty($creta_Options['header_logo_light']['url'])) {
             $logoUrl = $creta_Options['header_logo']['url'];
             $lightlogoUrl = $creta_Options['header_logo_light']['url'];
             ?>
@@ -227,17 +227,16 @@ if (!function_exists('magikCreta_recentitem_template')) {
                     if (isset($yith_wcwl) && is_object($yith_wcwl)) {
                         $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="wish_bt add_to_wishlist link-wishlist"' : 'class="wish_bt add_to_wishlist link-wishlist"';
                         ?>
-                        <a  data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
-                            href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                            data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                            data-product-type="<?php echo esc_html($product->get_type()); ?>"
+                        <a data-toggle="tooltip" data-placement="top"
+                           title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
+                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                           data-product-type="<?php echo esc_html($product->get_type()); ?>"
                             <?php echo htmlspecialchars_decode($classes); ?>
                         ></a>
                         <?php
                     }
                     ?>
-
-
                     <a href="<?php the_permalink(); ?>">
                         <img src="<?php echo esc_url($imageUrl[0]); ?>" class="img-fluid"
                              alt="<?php echo htmlspecialchars_decode($post->post_title); ?>" width="800" height="533"/>
@@ -1045,9 +1044,10 @@ if (!function_exists('magikCreta_productitem_template')) {
                     if (isset($yith_wcwl) && is_object($yith_wcwl)) {
                         $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="wish_bt add_to_wishlist link-wishlist"' : 'class="wish_bt add_to_wishlist link-wishlist"';
                         ?>
-                        <a  data-toggle="tooltip" data-placement="top" title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
-                            href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                            data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                        <a data-toggle="tooltip" data-placement="top"
+                           title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
+                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
                            data-product-type="<?php echo esc_html($product->get_type()); ?>"
                             <?php echo htmlspecialchars_decode($classes); ?>
                         ></a>
@@ -1072,10 +1072,12 @@ if (!function_exists('magikCreta_productitem_template')) {
                             <?php echo htmlspecialchars_decode($post->post_title); ?>
                         </a>
                     </h3>
-                    <?php //the_content();?>
-                    <?php $content = get_the_content(); echo mb_strimwidth($content, 0, 40, '...');?>
+                    <?php //the_content();
+                    ?>
+                    <?php $content = get_the_content();
+                    echo mb_strimwidth($content, 0, 40, '...'); ?>
                     <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-<!--                    <span class="price">From <strong>$54</strong> /per person</span>-->
+                    <!--                    <span class="price">From <strong>$54</strong> /per person</span>-->
                 </div>
                 <ul>
                     <li><i class="icon_clock_alt"></i> 1h 30min</li>

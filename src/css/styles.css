@@ -3846,12 +3846,9 @@ a.social_bt {
 .user-login {
   background: #fff; }
 
-.woocommerce {
-  height: 100vh;
-  padding-top: 110px; }
-  .woocommerce .register {
-    border: none !important;
-    margin: 0 !important; }
+.woocommerce .register {
+  border: none !important;
+  margin: 0 !important; }
 
 .woocommerce-page p.form-row label {
   display: inline-block;
