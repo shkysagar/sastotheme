@@ -21,14 +21,6 @@ if (!isset($content_width)) {
 }
 
 
-// [product_count] shortcode
-function product_count_shortcode()
-{
-    $count_posts = wp_count_posts('product');
-    return $count_posts->publish;
-}
-
-add_shortcode('product_count', 'product_count_shortcode');
 class MagikCreta
 {
 
@@ -60,9 +52,7 @@ class MagikCreta
 
     function magikCreta_theme()
     {
-
         global $creta_Options;
-
     }
 
     /** * Theme setup */
@@ -89,19 +79,16 @@ class MagikCreta
             'aside', 'video', 'audio'
         ));
 
-        // Setup the WordPress core custom background feature.
-        $default_color = trim('ffffff', '#');
-        $default_text_color = trim('333333', '#');
 
         add_theme_support('custom-background', apply_filters('magikCreta_custom_background_args', array(
-            'default-color' => $default_color,
+//            'default-color' => $default_color,
             'default-attachment' => 'fixed',
         )));
 
         add_theme_support('custom-header', apply_filters('magikCreta_custom_header_args', array(
-            'default-text-color' => $default_text_color,
+            /*            'default-text-color' => $default_text_color,*/
             'width' => 1170,
-            'height' => 450,
+            'height' => 420,
 
         )));
 
@@ -228,7 +215,6 @@ class MagikCreta
         ));
 
     }
-
 
     function magikCreta_apple_touch_icon()
     {
@@ -1093,7 +1079,19 @@ class MagikCreta
     }
 }
 
+// [product_count] shortcode
+function product_count_shortcode()
+{
+    $count_posts = wp_count_posts('product');
+    return $count_posts->publish;
+}
+
+add_shortcode('product_count', 'product_count_shortcode');
+
+
 // Instantiate theme
 $MagikCreta = new MagikCreta();
 
 ?>
+
+
