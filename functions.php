@@ -21,6 +21,7 @@ if (!isset($content_width)) {
 }
 
 
+
 class MagikCreta
 {
 
@@ -1079,6 +1080,8 @@ class MagikCreta
     }
 }
 
+
+
 // [product_count] shortcode
 function product_count_shortcode()
 {
@@ -1093,5 +1096,3 @@ add_shortcode('product_count', 'product_count_shortcode');
 $MagikCreta = new MagikCreta();
 
 ?>
-
-
