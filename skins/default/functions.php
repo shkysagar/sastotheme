@@ -1032,7 +1032,7 @@ if (!function_exists('magikCreta_productitem_template')) {
         global $product, $woocommerce_loop, $yith_wcwl, $post;
         $imageUrl = wc_placeholder_img_src();
         if (has_post_thumbnail())
-            $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magikCreta-product-size-large');
+            $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 
         ?>
 
