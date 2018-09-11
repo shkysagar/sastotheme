@@ -690,8 +690,7 @@ header.site-head {
   z-index: 11;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   @include mobile {
-    padding: 15px;
-    background: gray;
+    padding: 15px 15px 5px 15px;
   }
   &.header {
     .logo_sticky {
@@ -3794,25 +3793,21 @@ ul.hotel_facilities {
     //width: 430px;
     min-height: 1px;
     //top: 10%;
-
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
     //overflow-y: auto;
     //background-color: #fff;
     //min-height: 100vh;
     //border: 1px red solid;
     @include mobile {
       width: 100%;
-      padding: 15px;
-    }
-    .user-login,
-    .user-register{
-      left: 50%;
-      transform: translate(-50%, 0%);
-      position: absolute;
+      padding: 30px;
     }
     form {
       padding: 45px 60px 60px 60px;
       @include extra-small-mobile {
-        padding: 20px;
+        padding: 15px;
       }
       display: block;
       .form-group {
@@ -3882,37 +3877,6 @@ a.social_bt {
   &:hover {
     -webkit-filter: brightness(115%);
     filter: brightness(115%);
-  }
-  &.facebook,
-  &.google,
-  &.linkedin {
-    &:before {
-      font-family: 'ElegantIcons';
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      @include fontSize(16px);
-      color: #fff;
-    }
-  }
-  &.facebook {
-    background-color: #3B5998;
-    &:before {
-      content: "\e093";
-    }
-  }
-  &.google {
-    background-color: #DC4E41;
-    &:before {
-      content: "\e096";
-      top: 12px;
-    }
-  }
-  &.linkedin {
-    background-color: #0077B5;
-    &:before {
-      content: "\e09d";
-    }
   }
 }
 
@@ -5810,13 +5774,15 @@ ul.bullets {
   color: #999;
 }
 
-a#forgot {
+a#forgot,
+a#signup {
   color: #999;
   font-weight: 500;
   @include fontSize(13px);
 }
 
-#forgot_pw {
+#forgot_pw,
+#sign_up{
   background-color: #fff;
   position: absolute;
   left: 0;
@@ -5827,17 +5793,6 @@ a#forgot {
   display: none;
   label {
     font-weight: 500;
-  }
-}
-
-.sign-in-wrapper {
-  position: relative;
-  height: 100%;
-  #forgot_pw{
-    width: 800px;
-    @include extra-small-mobile {
-      width: auto;
-    }
   }
 }
 

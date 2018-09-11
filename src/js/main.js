@@ -102,9 +102,13 @@
 		}
 	});
 
-	// Forgot Password
-	$("#forgot").click(function () {
+    // Forgot Password
+    $("#forgot").click(function () {
         $("#forgot_pw").fadeToggle("fast");
+    });
+    // Signup
+    $("#signup").click(function () {
+        $("#sign_up").fadeToggle("fast");
     });
 
     $("#back").click(function () {
