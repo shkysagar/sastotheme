@@ -42,7 +42,7 @@
         </div>
     </div>
     <style>
-        .heroImage::before{
+        .heroImage::before {
             background: url("<?php header_image(); ?>") no-repeat !important;
             background-size: cover !important;
         }
@@ -52,14 +52,13 @@
 <?php magikCreta_featured_products(); ?>
 <?php magikCreta_recent_products(); ?>
 
+<hr/>
 
 
 
 
-
-
-<?php //magikCreta_home_page_banner(); ?>
-<?php //magikCreta_new_products();?>
+<?php magikCreta_home_page_banner(); ?>
+<?php //magikCreta_new_products(); ?>
 <?php //magikCreta_bestseller_products(); ?>
 <?php //magikCreta_featured_products();?>
 <?php //magikCreta_recommended_products();?>

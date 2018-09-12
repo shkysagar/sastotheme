@@ -353,7 +353,6 @@ jQuery(document).ready(function () {
     });
 
 
-
     /*========== Left Nav ===========*/
 
     jQuery(document).ready(function () {
@@ -2252,9 +2251,6 @@ jQuery(".cross-img").on("click", function () {
 
 
 //countdown js filter
-// jQuery('.timer-grid').each(function(){
-//     var countTime=jQuery(this).attr('data-time');jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINS</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
-// });
 
 
 /* category style js */
