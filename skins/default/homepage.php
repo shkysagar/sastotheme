@@ -8,32 +8,7 @@
                 </div>
                 <div class="col-lg-8 offset-lg-2">
                     <p>A marketplace of responsive HTML templates from a huge community of professional authors to
-                        create
-                        your amazing online presence.</p>
-                    <form class="d-none">
-                        <div class="row no-gutters custom-search-input-2 inner">
-                            <div class="col-lg-4">
-                                <select class="wide">
-                                    <option>All Categories</option>
-                                    <option>Churches</option>
-                                    <option>Historic</option>
-                                    <option>Museums</option>
-                                    <option>Walking tours</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input class="form-control" type="text"
-                                           placeholder="What are you looking for...">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2">
-                                <input type="submit" class="btn_search" value="Search">
-                            </div>
-                        </div>
-                        <!-- /row -->
-                    </form>
+                        create your amazing online presence.</p>
 
                     <?php echo do_shortcode('[wr_live_search show_button="yes" show_category="yes" search_in="title, description, content, sku" show_suggestion="yes"]'); ?>
                 </div>
@@ -52,13 +27,19 @@
 <?php magikCreta_featured_products(); ?>
 <?php magikCreta_recent_products(); ?>
 
-<hr/>
-
-
-
-
-<?php magikCreta_home_page_banner(); ?>
-<?php //magikCreta_new_products(); ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div id="carousel" class="owl-carousel owl-theme">
+                <?php magikCreta_hotdeal_product(); ?>
+            </div>
+        </div>
+        <div class="col-9">
+            <?php magikCreta_new_products(); ?>
+        </div>
+    </div>
+</div>
+<?php //magikCreta_home_page_banner(); ?>
 <?php //magikCreta_bestseller_products(); ?>
 <?php //magikCreta_featured_products();?>
 <?php //magikCreta_recommended_products();?>

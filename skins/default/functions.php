@@ -199,7 +199,6 @@ if (!function_exists('magikCreta_recent_products')) {
                     </p>
                 </div>
                 <!-- /container -->
-                <hr class="">
             </div>
         <?php } ?>
         <?php
@@ -347,15 +346,15 @@ if (!function_exists('magikCreta_home_page_banner')) {
         <div id="magik-slideshow" class="magik-slideshow">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-9">
-                        asdasdasdasd
-                    </div>
+
                     <div class="col-md-3 hot-deal">
 
                         <?php magikCreta_hotdeal_product(); ?>
 
                     </div>
-
+                    <div class="col-md-9">
+                        asdasdasdasd
+                    </div>
 
                 </div>
             </div>
@@ -810,7 +809,8 @@ if (!function_exists('magikCreta_new_products')) {
 
                                                         if ($loop->have_posts()) {
                                                             while ($loop->have_posts()) : $loop->the_post();
-                                                                magikCreta_newproduct_template();
+//                                                                magikCreta_newproduct_template();
+                                                                magikCreta_hotdeal_template();
                                                             endwhile;
                                                         } else {
                                                             esc_html__('No products found', 'creta');
@@ -849,12 +849,11 @@ if (!function_exists('magikCreta_hotdeal_product')) {
         if (isset($creta_Options['enable_home_hotdeal_products']) && !empty($creta_Options['enable_home_hotdeal_products'])) {
 
             ?>
-            <ul class="products-grid">
 
                 <?php
                 $args = array(
                     'post_type' => 'product',
-                    'posts_per_page' => 1,
+                    'posts_per_page' => -1,
                     'meta_key' => 'hotdeal_on_home',
                     'meta_value' => 'yes',
                     'meta_query' => array(
@@ -890,8 +889,6 @@ if (!function_exists('magikCreta_hotdeal_product')) {
                 }
                 wp_reset_postdata();
                 ?>
-
-            </ul>
 
             <?php
         }
@@ -1201,64 +1198,6 @@ if (!function_exists('magikCreta_hotdeal_template')) {
         ?>
 
 
-        <li class="right-space two-height item">
-            <div class="item-inner">
-                <div class="item-img">
-
-                    <div class="item-img-info">
-                        <a href="<?php the_permalink(); ?>" title="<?php echo htmlspecialchars_decode($post->post_title); ?>" class="product-image">
-                            <figure class="img-responsive">
-                                <img alt="<?php echo htmlspecialchars_decode($post->post_title); ?>"
-                                     src="<?php echo esc_url($imageUrl); ?>">
-                            </figure>
-                        </a>
-                        <?php if ($product->is_on_sale()) : ?>
-                            <div class="hot-label hot-top-left">
-                                <?php esc_attr_e('hot', 'creta'); ?>
-                            </div>
-                        <?php endif; ?>
-
-
-
-
-                        <div class="box-timer">
-                            <div class="timer-grid" data-time="<?php echo esc_html($sales_price_date_to); ?>">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="item-info">
-                    <div class="info-inner">
-                        <div class="item-title"><a href="<?php the_permalink(); ?>"
-                                                   title="<?php echo htmlspecialchars_decode($post->post_title); ?>"> <?php echo htmlspecialchars_decode($post->post_title); ?> </a>
-                        </div>
-                        <div class="item-content">
-                            <div class="rating">
-                                <div class="ratings">
-                                    <div class="rating-box">
-                                        <?php $average = $product->get_average_rating(); ?>
-                                        <div style="width:<?php echo esc_html(($average / 5) * 100); ?>%"
-                                             class="rating"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-price">
-                                <div class="price-box">
-                                    <?php echo htmlspecialchars_decode($product->get_price_html()); ?>
-                                </div>
-                            </div>
-                            <div class="action">
-                                <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </li>
         <div class="item ">
             <div class="box_grid">
                 <figure>

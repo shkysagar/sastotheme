@@ -181,19 +181,23 @@
     // Carousels
 	$('#carousel').owlCarousel({
 		center: true,
-		items: 2,
+		items: 1,
 		loop: true,
 		margin: 10,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
+		dots: false,
 		responsive: {
 			0: {
 				items: 1,
 				dots:false
 			},
 			600: {
-				items: 2
+				items: 1
 			},
 			1000: {
-				items: 4
+				items: 1
 			}
 		}
 	});
