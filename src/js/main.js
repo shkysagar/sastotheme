@@ -316,5 +316,8 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
-
+    $('#myTab a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
 })(window.jQuery); 
