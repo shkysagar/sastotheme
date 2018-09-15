@@ -2705,10 +2705,11 @@ a.box_feat {
 }
 
 #carousel {
-  margin-top: 40px;
+  //margin-top: 40px;
   @include mobile {
     margin-bottom: 30px;
   }
+
   .item {
     .title {
       position: absolute;
@@ -2733,10 +2734,6 @@ a.box_feat {
           margin-top: 3px;
         }
       }
-    }
-    a {
-      position: relative;
-      display: block;
     }
   }
 }

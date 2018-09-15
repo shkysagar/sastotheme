@@ -2702,41 +2702,37 @@ a.box_feat {
     font-size: 18px;
     font-size: 1.125rem; }
 
-#carousel {
-  margin-top: 40px; }
-  @media (max-width: 767px) {
-    #carousel {
-      margin-bottom: 30px; } }
-  #carousel .item .title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    z-index: 9; }
-    #carousel .item .title h4 {
-      background-color: #0054a6;
-      background-color: #0054a6;
-      display: inline-block;
-      -webkit-border-radius: 3px 3px 0 0;
-      -moz-border-radius: 3px 3px 0 0;
-      -ms-border-radius: 3px 3px 0 0;
-      border-radius: 3px 3px 0 0;
-      color: #fff;
-      padding: 10px 15px;
-      margin: 0;
-      font-size: 16px;
-      font-size: 1rem;
-      opacity: 0; }
-      #carousel .item .title h4 em {
-        display: block;
-        font-size: 13px;
-        font-size: 0.8125rem;
-        font-weight: 300;
-        margin-top: 3px; }
-  #carousel .item a {
-    position: relative;
-    display: block; }
+@media (max-width: 767px) {
+  #carousel {
+    margin-bottom: 30px; } }
+
+#carousel .item .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 9; }
+  #carousel .item .title h4 {
+    background-color: #0054a6;
+    background-color: #0054a6;
+    display: inline-block;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -ms-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    opacity: 0; }
+    #carousel .item .title h4 em {
+      display: block;
+      font-size: 13px;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      margin-top: 3px; }
 
 #carousel .owl-item {
   opacity: 0.5;
