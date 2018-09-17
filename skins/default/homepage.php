@@ -30,7 +30,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <div id="carousel" class="owl-carousel owl-theme">
+            <div id="carousel" class="owl-carousel owl-theme section-onsale-product ">
                 <?php magikCreta_hotdeal_product(); ?>
             </div>
         </div>

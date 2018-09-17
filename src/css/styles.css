@@ -5829,3 +5829,40 @@ a.social_bt.google {
     content: "\f178";
     font-family: FontAwesome;
     font-size: 20px; }
+
+.products-carousel-tabs .nav.nav-tabs {
+  margin-bottom: 15px; }
+
+.products-carousel-tabs .nav-link.active {
+  position: relative;
+  border-color: transparent;
+  background: none; }
+  .products-carousel-tabs .nav-link.active::before {
+    content: ' ';
+    height: 4px;
+    width: 10px;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .products-carousel-tabs .nav-link.active::after {
+    content: ' ';
+    border-bottom: 2px solid transparent;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    width: 100%; }
+
+.section-onsale-product {
+  border: 1px red solid;
+  padding: 20px;
+  border-radius: 10px; }

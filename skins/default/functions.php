@@ -726,176 +726,75 @@ if (!function_exists('magikCreta_new_products')) {
 
         if (isset($creta_Options['enable_home_new_products']) && !empty($creta_Options['enable_home_new_products']) && !empty($creta_Options['home_newproduct_categories'])) {
             ?>
-
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-            <?php
-            $catloop = 1;
-
-
-            foreach ($creta_Options['home_newproduct_categories'] as $category) {
-                $term = get_term_by('id', $category, 'product_cat', 'ARRAY_A');
-
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link <?php if ($catloop == 1) { ?> active <?php } ?>" id="home-tab" data-toggle="tab" href="#newcat-<?php echo esc_html($category) ?>" role="tab" aria-controls="home" aria-selected="true"><?php echo esc_html($term['name']); ?></a>
-                </li>
-                <?php
-                $catloop++;
-            } ?>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-            <?php
-            $contentloop = 1;
-            foreach ($creta_Options['home_newproduct_categories'] as $catcontent) {
-                $term = get_term_by('id', $catcontent, 'product_cat', 'ARRAY_A');
-                ?>
-                <div class="tab-pane show fade <?php if ($contentloop == 1) { ?> active <?php } ?>" id="newcat-<?php echo esc_html($catcontent); ?>" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row">
-                        <?php
-
-                        $args = array(
-                            'post_type' => 'product',
-                            'post_status' => 'publish',
-                            'ignore_sticky_posts' => 1,
-                            'posts_per_page' => 6,
-
-                            'orderby' => 'date',
-                            'order' => 'DESC',
-                            'tax_query' => array(
-
-                                array(
-                                    'taxonomy' => 'product_cat',
-                                    'field' => 'term_id',
-                                    'terms' => $catcontent
-                                )
-                            ),
+            <div class="products-carousel-tabs">
+                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                    <?php
+                    $catloop = 1;
 
 
-                        );
-
-                        $loop = new WP_Query($args);
-
-                        if ($loop->have_posts()) {
-                            while ($loop->have_posts()) : $loop->the_post();
-                                magikCreta_newproduct_template();
-                                //magikCreta_hotdeal_template();
-                            endwhile;
-                        } else {
-                            esc_html__('No products found', 'creta');
-                        }
-
-                        wp_reset_postdata();
-                        $contentloop++;
+                    foreach ($creta_Options['home_newproduct_categories'] as $category) {
+                        $term = get_term_by('id', $category, 'product_cat', 'ARRAY_A');
 
                         ?>
-                    </div>
-                </div>
-            <?php } ?>
-            </div>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if ($catloop == 1) { ?> active <?php } ?>" id="home-tab"
+                               data-toggle="tab" href="#newcat-<?php echo esc_html($category) ?>" role="tab"
+                               aria-controls="home" aria-selected="true"><?php echo esc_html($term['name']); ?></a>
+                        </li>
+                        <?php
+                        $catloop++;
+                    } ?>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <?php
+                    $contentloop = 1;
+                    foreach ($creta_Options['home_newproduct_categories'] as $catcontent) {
+                        $term = get_term_by('id', $catcontent, 'product_cat', 'ARRAY_A');
+                        ?>
+                        <div class="tab-pane show fade <?php if ($contentloop == 1) { ?> active <?php } ?>"
+                             id="newcat-<?php echo esc_html($catcontent); ?>" role="tabpanel"
+                             aria-labelledby="home-tab">
+                            <div class="row">
+                                <?php
+
+                                $args = array(
+                                    'post_type' => 'product',
+                                    'post_status' => 'publish',
+                                    'ignore_sticky_posts' => 1,
+                                    'posts_per_page' => 6,
+
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'tax_query' => array(
+
+                                        array(
+                                            'taxonomy' => 'product_cat',
+                                            'field' => 'term_id',
+                                            'terms' => $catcontent
+                                        )
+                                    ),
 
 
-            <div class="content-page d-none">
-                <div class="container">
-                    <!-- featured category fashion -->
-                    <div class="category-product">
-                        <div class="navbar nav-menu">
-                            <div class="navbar-collapse">
-                                <ul class="nav navbar-nav">
+                                );
 
-                                    <li>
-                                        <div class="new_title">
-                                            <h2>
-                                                <strong> <?php esc_attr_e('New', 'creta'); ?> </strong>
-                                                <?php esc_attr_e('Products', 'creta'); ?>
-                                            </h2>
+                                $loop = new WP_Query($args);
 
-                                        </div>
-                                    </li>
+                                if ($loop->have_posts()) {
+                                    while ($loop->have_posts()) : $loop->the_post();
+                                        magikCreta_newproduct_template();
+                                        //magikCreta_hotdeal_template();
+                                    endwhile;
+                                } else {
+                                    esc_html__('No products found', 'creta');
+                                }
 
+                                wp_reset_postdata();
+                                $contentloop++;
 
-                                    <?php
-                                    $catloop = 1;
-
-
-                                    foreach ($creta_Options['home_newproduct_categories'] as $category) {
-                                        $term = get_term_by('id', $category, 'product_cat', 'ARRAY_A');
-
-                                        ?>
-                                        <li class="<?php if ($catloop == 1) { ?> active <?php } ?>">
-                                            <a href="#newcat-<?php echo esc_html($category) ?>"
-                                               data-toggle="tab"><?php echo esc_html($term['name']); ?>
-                                            </a>
-                                        </li>
-                                        <?php
-                                        $catloop++;
-                                    } ?>
-                                </ul>
-
-
+                                ?>
                             </div>
                         </div>
-
-                        <!-- Tab panes -->
-                        <div class="product-bestseller">
-
-                            <div class="product-bestseller-content">
-                                <div class="product-bestseller-list">
-                                    <div class="tab-container">
-                                        <?php
-                                        $contentloop = 1;
-                                        foreach ($creta_Options['home_newproduct_categories'] as $catcontent) {
-                                            $term = get_term_by('id', $catcontent, 'product_cat', 'ARRAY_A');
-                                            ?>
-                                            <div class="tab-panel <?php if ($contentloop == 1) { ?> active <?php } ?>"
-                                                 id="newcat-<?php echo esc_html($catcontent); ?>">
-                                                <div class="row">
-                                                    <?php
-
-                                                    $args = array(
-                                                        'post_type' => 'product',
-                                                        'post_status' => 'publish',
-                                                        'ignore_sticky_posts' => 1,
-                                                        'posts_per_page' => 6,
-
-                                                        'orderby' => 'date',
-                                                        'order' => 'DESC',
-                                                        'tax_query' => array(
-
-                                                            array(
-                                                                'taxonomy' => 'product_cat',
-                                                                'field' => 'term_id',
-                                                                'terms' => $catcontent
-                                                            )
-                                                        ),
-
-
-                                                    );
-
-                                                    $loop = new WP_Query($args);
-
-                                                    if ($loop->have_posts()) {
-                                                        while ($loop->have_posts()) : $loop->the_post();
-                                                            magikCreta_newproduct_template();
-                                                            //magikCreta_hotdeal_template();
-                                                        endwhile;
-                                                    } else {
-                                                        esc_html__('No products found', 'creta');
-                                                    }
-
-                                                    wp_reset_postdata();
-                                                    $contentloop++;
-
-                                                    ?>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             <?php
@@ -915,7 +814,7 @@ if (!function_exists('magikCreta_hotdeal_product')) {
             <?php
             $args = array(
                 'post_type' => 'product',
-                'posts_per_page' => -1,
+                'posts_per_page' => 1,
                 'meta_key' => 'hotdeal_on_home',
                 'meta_value' => 'yes',
                 'meta_query' => array(
@@ -1228,8 +1127,7 @@ if (!function_exists('magikCreta_hotdeal_template')) {
         $curdate = date("m/d/y h:i:s A");
         ?>
 
-
-        <div class="item ">
+        <div class="item">
             <div class="box_grid">
                 <figure>
 
@@ -1287,7 +1185,6 @@ if (!function_exists('magikCreta_hotdeal_template')) {
                 </ul>
             </div>
         </div>
-
         <?php
     }
 }

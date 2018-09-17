@@ -6085,3 +6085,46 @@ a.social_bt.google {
   }
 
 }
+
+//homepage tab menu
+.products-carousel-tabs {
+  .nav.nav-tabs{
+    margin-bottom: 15px;
+  }
+  .nav-link {
+    &.active {
+      //font-weight: bold;
+      position: relative;
+      border-color: transparent;
+      background: none;
+      &::before {
+        content: ' ';
+        height: 4px;
+        width: 10px;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        @include border-radius(0 0 10px 10px);
+        @include transform(translateX(-50%));
+      }
+
+      &::after {
+        content: ' ';
+        border-bottom: 2px solid transparent;
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+.section-onsale-product {
+  border: 1px red solid;
+  padding: 20px;
+  border-radius: 10px;
+}
