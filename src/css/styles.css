@@ -56,6 +56,9 @@
     padding-right: 4%;
     padding-left: 4%; } }
 
+ins {
+  text-decoration: none; }
+
 /* MAIN NAVIGATION */
 /* All styles for screen size over 992px*/
 @media only screen and (min-width: 992px) {
@@ -5866,3 +5869,24 @@ a.social_bt.google {
   border: 1px red solid;
   padding: 20px;
   border-radius: 10px; }
+
+.offer-box .offer-image {
+  height: 220px; }
+  .offer-box .offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; }
+
+.offer-box del {
+  font-size: 60%; }
+
+.offer-box .timer-grid > div {
+  margin: 2px;
+  text-transform: uppercase; }
+
+.offer-box .timer-grid span {
+  display: block;
+  background-color: #e6e6e6;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 120%; }

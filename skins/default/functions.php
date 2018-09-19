@@ -1128,61 +1128,79 @@ if (!function_exists('magikCreta_hotdeal_template')) {
         ?>
 
         <div class="item">
-            <div class="box_grid">
-                <figure>
-
-                    <?php
-                    if (isset($yith_wcwl) && is_object($yith_wcwl)) {
-                        $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="wish_bt add_to_wishlist link-wishlist"' : 'class="wish_bt add_to_wishlist link-wishlist"';
-                        ?>
-                        <a data-toggle="tooltip" data-placement="top"
-                           title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
-                           href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
-                           data-product-id="<?php echo esc_html($product->get_id()); ?>"
-                           data-product-type="<?php echo esc_html($product->get_type()); ?>"
-                            <?php echo htmlspecialchars_decode($classes); ?>
-                        ></a>
-                        <?php
-                    }
-                    ?>
-
-
-                    <a href="<?php the_permalink(); ?>">
-                        <img alt="<?php echo htmlspecialchars_decode($post->post_title); ?>"
-                             src="<?php echo esc_url($imageUrl); ?>">
-                        <!--                        <div class="read_more"><span>Read more</span></div>-->
-
-                    </a>
-
-                    <small>
-                        <?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
-                </figure>
-                <div class="wrapper">
-                    <h3>
+            <div class="offer-box">
+            <h5>Special Offer</h5>
+                <div class="offer-image" >
+                    <img alt="<?php echo htmlspecialchars_decode($post->post_title); ?>"
+                         src="<?php echo esc_url($imageUrl); ?>"/>
+                </div>
+                <div class="text-center">
+                    <h6>
                         <a href="<?php the_permalink(); ?>"
                            title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
-                            <?php echo htmlspecialchars_decode($post->post_title); ?>
+                        <?php echo htmlspecialchars_decode($post->post_title); ?>
                         </a>
-                    </h3>
-                    <?php //the_content();
-                    ?>
-                    <?php $content = get_the_content();
-                    echo mb_strimwidth($content, 0, 40, '...'); ?>
-                    <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
-                    <!--                    <span class="price">From <strong>$54</strong> /per person</span>-->
-                    <span class="timer-grid" data-time="<?php echo esc_html($sales_price_date_to); ?>"> </span>
-
-
+                    </h6>
+                    <h4><?php echo htmlspecialchars_decode($product->get_price_html()); ?></h4>
+                    <p>Hurry Up! Offer ends in:</p>
+                    <div class="timer-grid d-flex justify-content-around" data-time="<?php echo esc_html($sales_price_date_to); ?>"> </div>
                 </div>
-                <ul>
-                    <li><?php echo htmlspecialchars_decode($product->get_price_html()); ?>
-                    </li>
-                    <li>
-                        <div class="score">
-                            <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
-                        </div>
-                    </li>
-                </ul>
+                <div class="box_grid d-none">
+                    <figure>
+
+                        <?php
+                        if (isset($yith_wcwl) && is_object($yith_wcwl)) {
+                            $classes = get_option('yith_wcwl_use_button') == 'yes' ? 'class="wish_bt add_to_wishlist link-wishlist"' : 'class="wish_bt add_to_wishlist link-wishlist"';
+                            ?>
+                            <a data-toggle="tooltip" data-placement="top"
+                               title="<?php esc_attr_e('Add to Wishlist', 'creta'); ?>"
+                               href="<?php echo esc_url(add_query_arg('add_to_wishlist', $product->get_id())) ?>"
+                               data-product-id="<?php echo esc_html($product->get_id()); ?>"
+                               data-product-type="<?php echo esc_html($product->get_type()); ?>"
+                                <?php echo htmlspecialchars_decode($classes); ?>
+                            ></a>
+                            <?php
+                        }
+                        ?>
+
+
+                        <a href="<?php the_permalink(); ?>">
+                            <img alt="<?php echo htmlspecialchars_decode($post->post_title); ?>"
+                                 src="<?php echo esc_url($imageUrl); ?>">
+                            <!--                        <div class="read_more"><span>Read more</span></div>-->
+
+                        </a>
+
+                        <small>
+                            <?php echo htmlspecialchars_decode($product->get_categories()); ?></small>
+                    </figure>
+                    <div class="wrapper">
+                        <h3>
+                            <a href="<?php the_permalink(); ?>"
+                               title="<?php echo htmlspecialchars_decode($post->post_title); ?>">
+                                <?php echo htmlspecialchars_decode($post->post_title); ?>
+                            </a>
+                        </h3>
+                        <?php //the_content();
+                        ?>
+                        <?php $content = get_the_content();
+                        echo mb_strimwidth($content, 0, 40, '...'); ?>
+                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p>
+                        <!--                    <span class="price">From <strong>$54</strong> /per person</span>-->
+                        <span class="timer-grid" data-time="<?php echo esc_html($sales_price_date_to); ?>"> </span>
+
+
+                    </div>
+                    <ul>
+                        <li><?php echo htmlspecialchars_decode($product->get_price_html()); ?>
+                        </li>
+                        <li>
+                            <div class="score">
+                                <?php $MagikCreta->magikCreta_woocommerce_product_add_to_cart_text(); ?>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <?php

@@ -26,8 +26,8 @@
 
 <?php magikCreta_featured_products(); ?>
 <?php magikCreta_recent_products(); ?>
-
-<div class="container-fluid">
+<div class="bg_color_1">
+<div class="container-fluid margin_80_55">
     <div class="row">
         <div class="col-3">
             <div id="carousel" class="owl-carousel owl-theme section-onsale-product ">
@@ -38,6 +38,7 @@
             <?php magikCreta_new_products(); ?>
         </div>
     </div>
+</div>
 </div>
 <?php //magikCreta_home_page_banner(); ?>
 <?php //magikCreta_bestseller_products(); ?>
