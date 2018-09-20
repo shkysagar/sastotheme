@@ -518,7 +518,7 @@ function magikCreta_hotdeal_timer_js()
     <script type="text/javascript">
         jQuery('.timer-grid').each(function(){
            var countTime=jQuery(this).attr('data-time');
-           jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day "><span>'+event.strftime('%D')+'</span> days</div> <div class="hour "><span>'+event.strftime('%H')+'</span>hrs</div><div class="min "><span>'+event.strftime('%M')+' </span>mins</div> <div class="sec "><span>'+event.strftime('%S')+'</span> sec</div>')});
+           jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day col-3"><span>'+event.strftime('%D')+'</span> days</div> <div class="hour col-3"><span>'+event.strftime('%H')+'</span>hrs</div><div class="min col-3"><span>'+event.strftime('%M')+' </span>mins</div> <div class="sec col-3"><span>'+event.strftime('%S')+'</span> sec</div>')});
 
         });
     </script>

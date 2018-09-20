@@ -1143,7 +1143,7 @@ if (!function_exists('magikCreta_hotdeal_template')) {
                     </h6>
                     <h4><?php echo htmlspecialchars_decode($product->get_price_html()); ?></h4>
                     <p>Hurry Up! Offer ends in:</p>
-                    <div class="timer-grid d-flex justify-content-around" data-time="<?php echo esc_html($sales_price_date_to); ?>"> </div>
+                    <div class="timer-grid row" data-time="<?php echo esc_html($sales_price_date_to); ?>"> </div>
                 </div>
                 <div class="box_grid d-none">
                     <figure>
