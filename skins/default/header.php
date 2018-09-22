@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <meta name="google-site-verification" content="0cA2YUXDvcEpul2iuPhQ8bGz87WsM9Vl-WWYd69Id6E" />
     <?php wp_head(); ?>
 </head>
 <?php
