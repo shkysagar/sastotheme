@@ -179,28 +179,72 @@
     });
 
     // Carousels
-	$('#carousel').owlCarousel({
-		center: true,
-		items: 1,
-		loop: true,
-		margin: 10,
-        autoplay:true,
-        autoplayTimeout:1000,
-        autoplayHoverPause:true,
-		dots: false,
-		responsive: {
-			0: {
-				items: 1,
-				dots:false
-			},
-			600: {
-				items: 1
-			},
-			1000: {
-				items: 1
-			}
-		}
-	});
+    $('#carousel').owlCarousel({
+        center: true,
+        items: 1,
+        // loop: true,
+        // margin: 30,
+    });
+    $('#carousel-1').owlCarousel({
+        // center: true,
+        items: 2,
+        // loop: true,
+        margin: 30,
+        responsive: {
+            0: {
+                items: 1
+            },
+            767: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1400: {
+                items: 3
+            }
+        }
+    });
+    $('#carousel-2').owlCarousel({
+        // center: true,
+        items: 2,
+        // loop: true,
+        margin: 30,
+        responsive: {
+            0: {
+                items: 1
+            },
+            767: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1400: {
+                items: 3
+            }
+        }
+    });
+    $('#carousel-3').owlCarousel({
+        // center: true,
+        items: 2,
+        // loop: true,
+        margin: 30,
+        responsive: {
+            0: {
+                items: 1
+            },
+            767: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1400: {
+                items: 3
+            }
+        }
+    });
 	$('#reccomended').owlCarousel({
 		center: true,
 		items: 2,

@@ -48,9 +48,11 @@
     padding-left: 4%;
   }
 }
-ins{
+
+ins {
   text-decoration: none;
 }
+
 /* MAIN NAVIGATION */
 /* All styles for screen size over 992px*/
 @media only screen and (min-width: 992px) {
@@ -683,7 +685,16 @@ a.btn_map_in,
 
 /*-------- 1.3 Structure --------*/
 /* Header */
+.page-template-homepage,
+.archive{
+  margin-top: 60px;
+  header.site-head {
+    background: transparent;
+  }
+}
+
 header.site-head {
+  background: rgba(0, 0, 0, 0.45);
   position: fixed;
   left: 0;
   top: 0;
@@ -2490,6 +2501,10 @@ video {
   }
 }
 
+.owl-theme .owl-dots .owl-dot.active span {
+  width: 45px !important;
+}
+
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
   background: $color-1 !important;
@@ -2806,7 +2821,7 @@ a.box_feat {
     padding: 10px;
     display: inline-block;
   }
-  span {
+  > span {
     display: inline-block;
     position: relative;
     top: 7px;
@@ -6090,7 +6105,7 @@ a.social_bt.google {
 
 //homepage tab menu
 .products-carousel-tabs {
-  .nav.nav-tabs{
+  .nav.nav-tabs {
     margin-bottom: 15px;
   }
   .nav-link {
@@ -6122,8 +6137,6 @@ a.social_bt.google {
     }
   }
 }
-
-
 
 .section-onsale-product {
   border: 1px red solid;
