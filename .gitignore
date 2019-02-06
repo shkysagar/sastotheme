@@ -1,7 +1,2 @@
-node_modules
-.idea
-package-lock.json
-src/scss/.sass-cache
-src/scss/config.rb
-package.json
-package-lock.json
+
+images
