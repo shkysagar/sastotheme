@@ -14,7 +14,7 @@ $MagikCreta = new MagikCreta(); ?>
 <div id="preloader">
     <div data-loader="circle-side"></div>
 </div><!-- /Page Preload -->
-<div id="page" class="">
+<div id="page" class="page catalog-category-view">
 
     <header class="site-head header menu_fixed">
 

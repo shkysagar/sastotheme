@@ -26,7 +26,7 @@
 
 <?php magikCreta_featured_products(); ?>
 <div class="bg_color_1">
-    <?php magikCreta_recent_products(); ?>
+<?php magikCreta_recent_products(); ?>
 </div>
 
 <div class="container-fluid margin_80_55">
@@ -49,8 +49,7 @@
                 <div class="block-vertical"></div>
                 <div class="box_1">
                     <h3>Enjoy a GREAT travel with us</h3>
-                    <p>Ius cu tamquam persequeris, eu veniam apeirian platonem qui, id aliquip voluptatibus pri. Ei mea
-                        primis ornatus disputationi. Menandri erroribus cu per, duo solet congue ut. </p>
+                    <p>Ius cu tamquam persequeris, eu veniam apeirian platonem qui, id aliquip voluptatibus pri. Ei mea primis ornatus disputationi. Menandri erroribus cu per, duo solet congue ut. </p>
                     <a href="#0" class="btn_1 rounded">Read more</a>
                 </div>
             </div>
